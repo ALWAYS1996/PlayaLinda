@@ -7,16 +7,62 @@
     <title>Hotel Playa Linda</title>
     <link rel="stylesheet" href="~/Content/Bootstrap.css">
     <link rel="stylesheet" href="~/Content/Site.css">
+    <link href="~/Content/css/estilos1.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="~/Content/img/hotel.svg" />
 </head>
 
 <body>
-    <!-- Menu -->
-    <div class="wrapper">
+    <header name="heade" id="heade">
+     
+        <ul class="nav nav-tabs" name="heade" id="heade">
+            <li class="nav-item">
+                <a class="navbar-brand" href="#">      .      <img src="~/Content/img/hotel.svg" width="60" height="60" /></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="  background-color: aqua; " href="#">Hotel Playa Linda</a>
+            </li>
+           
+        </ul>
+        </header>
+    <br>
+    <div class="wrapper" id="body">
+        <nav class="nav flex-column" name="navegacionVertical" id="navegacionVertical">
+
+            <ul class="nav flex-column">
+
+                <li class="nav-item">
+                    @Html.ActionLink("Inicio", "Inicio", "Basic")
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Sobre Nosotros", "Nosotros", "Basic")
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Facilidades", "Facilidades", "Basic")
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Cómo llegar", "Llegar", "Basic")
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Tarifas", "Tarifas", "Basic")
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Hace reservación", "Reservar", "Basic")
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Contáctenos", "Contacto", "Basic",new {@class = "" })
+                </li>
+            </ul>
+        </nav>
+        @RenderBody()
+
+    </div>
+
+    @*<div class="wrapper">
         <nav id="sidebar">
             <div class="sidebar-header">
                 <h3>Hotel Playa Linda</h3>
             </div>
-            <ul class="list-unstyled">
+            <ul class="nav flex-column">
                 <li>
                     @Html.ActionLink("Inicio", "Inicio", "Basic")
                 </li>
@@ -37,18 +83,61 @@
                 </li>
                 <li>
                     @Html.ActionLink("Contáctenos", "Contacto", "Basic")
-                </li>
+                </li>bg-light
             </ul>
         </nav>
-    </div>
-
-    <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Hotel Playa Linda</p>
-        </footer>
-    </div>
+    </div>*@
+    <br>
+
+    <footer class="page-footer" id="foote" name="foote">
+        <div class="container">
+            <div class="row">
+                <div class="col 12 s3">
+                    <h5 class="white-text" style="background-color:aqua">Contactenos</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Administracion Sitio Web</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Oficinas Centrales</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">WhatApps</a></li>
+                    </ul>
+                </div>
+                <div class="col 12  s3">
+                    <h5 class="white-text" style="background-color:aqua">Navegación</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Inicio</a></li>
+                        <li><a id="ftextoA4" class="grey-text text-lighten-3" href="#!">Menu Principal</a></li>
+                    </ul>
+
+                </div>
+
+                <div class="col 12  s3">
+                    <h5 class="white-text" style="background-color:aqua">Redes Sociales</h5>
+                    <ul name="texto">
+                        <li>
+                            <a class="grey-text text-lighten-3" href="#!">Facebook </a>
+                            <i class="material-icons"></i>
+                        </li>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="#!">Twitter </a>
+                            <i class="material-icons"></i>
+                        </li>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="#!">Instagram </a>
+                            <i class="material-icons"></i>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div id="ftextoA15" class="container">
+                © 2020 Hotel Playa Linda
+                <a class="grey-text text-lighten-4 right" id="ftextoA13" href="#!">Más Información</a>
+            </div>
+        </div>
+    </footer>
+
 
     <script src="~/Scripts/JQuery.js"></script>
     <script src="~/Scripts/Popper.js"></script>
