@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace ENTIDAD.DOMINIO
-{
+namespace ENTIDAD{
+
     public class TipoHabitacion
     {
-
         [DisplayFormat(NullDisplayText = "Sin Respuesta")]
         [Display(Name = "Codigo")]
         [Key]
@@ -16,7 +15,7 @@ namespace ENTIDAD.DOMINIO
 
         [DisplayFormat(NullDisplayText = "Sin Respuesta")]
         [Display(Name = "Nombre")]
-    
+
         public string nombre { get; set; }
 
 

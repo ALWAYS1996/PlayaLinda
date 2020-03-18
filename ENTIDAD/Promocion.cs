@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace ENTIDAD.DOMINIO
-{
-   public class Promocion  {
+namespace ENTIDAD{
+
+    public class Promocion
+    {
         [DisplayFormat(NullDisplayText = "Sin Respuesta")]
         [Display(Name = "Codigo Promo")]
         [Key]

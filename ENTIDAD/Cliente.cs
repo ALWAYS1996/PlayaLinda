@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace ENTIDAD.DOMINIO
-{
-  public  class Cliente {
+namespace ENTIDAD{
 
-
+    public class Cliente{
         [DisplayFormat(NullDisplayText = "Sin Respuesta")]
         [Display(Name = "Código")]
         [Key]

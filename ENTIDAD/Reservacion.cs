@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace ENTIDAD.DOMINIO
+namespace ENTIDAD
 {
     public class Reservacion
     {
@@ -15,13 +15,13 @@ namespace ENTIDAD.DOMINIO
 
         [DisplayFormat(NullDisplayText = "Sin Respuesta")]
         [Display(Name = "Codigo Habitacion")]
-       
+
         public int codigoHabitacion { get; set; }
 
 
         [DisplayFormat(NullDisplayText = "Sin Respuesta")]
         [Display(Name = "Codigo Cliente")]
-        
+
         public string codigoCliente { get; set; }
 
 
