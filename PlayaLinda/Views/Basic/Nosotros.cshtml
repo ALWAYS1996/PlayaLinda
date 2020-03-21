@@ -1,7 +1,90 @@
-﻿
-@{
-    ViewBag.Title = "Nosotros";
-}
+﻿<!---------------------------RegistrarGaleriaImagen------------------------------------>
+@*<form action="javascripts:;">
+            <input type="file" id="fileUpload" name="fileUpload">
+            <input type="button" name="btn" id="btn" value="Enviar">
+            <div class="col-md-3" id="alertControl"></div>
+        </form>
 
-<h2>Nosotros</h2>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+                        $(document).ready(function (){
 
+                        $("#btn").click(function (){
+                            var selectFile = ($("#fileUpload"))[0].files[0];
+                            var dataString = new FormData();
+
+                            dataString.append("fileUpload", selectFile);
+
+                            $.ajax({
+
+                                url: '@Url.Action("RegistrarGaleriaImagenes", "Basic")',
+                                type: 'POST',
+                                data: dataString,
+                                contentType: false,
+                                processData: false,
+                                async: false,
+                                success: function () {
+                                    $("#alertControl").html('<div class="alert alert-success" id="alert">' + 'Exito' + '</div>');
+                                    if (typeof (data.Value) != "undefined") {
+                                        alert(data.Message);
+                                    } else { alert('Imagen Subida con exito'); }
+                                },
+                                error: function (data) {
+                                }
+                            });
+                        });
+
+                    });
+
+    </script>*@
+
+
+<!--------------------------- ------------------------------------>
+
+@{  var listadoGaleriaTexto = (IEnumerable<ENTIDAD.InformacionTexto>)ViewData["listadoGaleriaTexto"];
+
+    }
+    @model IEnumerable<ENTIDAD.InformacionTexto>
+
+
+
+
+    <html lang="en">
+    <head>
+    <link href="~/Content/css/estiloGaleria.css" rel="stylesheet" />
+    </head>
+    <body class="home">
+
+
+        <div class="container" style="margin-top:0px;">
+
+            <div class="row">
+                <div class="col-12">
+                    @foreach (var dato in listadoGaleriaTexto)
+                    {
+                      <center>  <h3 style="color:black; background-color:aqua"> @Html.DisplayFor(modelItem => dato.titulo)</h3></center>
+
+                        <center>  <div style="color:black"> @Html.DisplayFor(modelItem => dato.contenido) </div></center>
+
+                    }
+                </div>
+            </div>
+            <br>
+            <div class="demo-gallery">
+                <ul id="lightgallery" class="list-unstyled row">
+
+
+                    @foreach (var item in Model)
+                    {
+                        <li class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                            <a href="#" class="">
+
+                                <img height='100' width='100' class="img-responsive" src='@Html.DisplayFor(modelItem=> item.rutaImagen)' />
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </body>
+    </html>

@@ -1,17 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace ENTIDAD{
+namespace ENTIDAD
+{
 
-    public class Cliente{
+    public class Cliente
+    {
         [DisplayFormat(NullDisplayText = "Sin Respuesta")]
         [Display(Name = "Código")]
         [Key]
-        public string codigoCliente { get; set; }
+        public int codigoCliente { get; set; }
 
 
+
+
+        [DisplayFormat(NullDisplayText = "Sin Respuesta")]
+        [Display(Name = "Pasaporte")]
+        public string pasaporte { get; set; }
 
         [DisplayFormat(NullDisplayText = "Sin Respuesta")]
         [Display(Name = "Nombre")]
@@ -49,9 +53,10 @@ namespace ENTIDAD{
         {
         }
 
-        public Cliente(string codigoCliente, string nombre, string apellido1, string apellido2, string correo, string nacionalidad, int edad)
+        public Cliente(int codigoCliente, string pasaporte, string nombre, string apellido1, string apellido2, string correo, string nacionalidad, int edad)
         {
             this.codigoCliente = codigoCliente;
+            this.pasaporte = pasaporte;
             this.nombre = nombre;
             this.apellido1 = apellido1;
             this.apellido2 = apellido2;

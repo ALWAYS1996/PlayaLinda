@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\source\\repos\\PlayaLinda\\ENTIDAD\\ENTIDAD.csproj": {}
+    "D:\\Usuarios\\Usuario\\source\\repos\\PlayaLinda\\ENTIDAD\\ENTIDAD.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\source\\repos\\PlayaLinda\\ENTIDAD\\ENTIDAD.csproj": {
+    "D:\\Usuarios\\Usuario\\source\\repos\\PlayaLinda\\ENTIDAD\\ENTIDAD.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\PlayaLinda\\ENTIDAD\\ENTIDAD.csproj",
+        "projectUniqueName": "D:\\Usuarios\\Usuario\\source\\repos\\PlayaLinda\\ENTIDAD\\ENTIDAD.csproj",
         "projectName": "ENTIDAD",
-        "projectPath": "C:\\Users\\Usuario\\source\\repos\\PlayaLinda\\ENTIDAD\\ENTIDAD.csproj",
+        "projectPath": "D:\\Usuarios\\Usuario\\source\\repos\\PlayaLinda\\ENTIDAD\\ENTIDAD.csproj",
         "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\source\\repos\\PlayaLinda\\ENTIDAD\\obj\\",
+        "outputPath": "D:\\Usuarios\\Usuario\\source\\repos\\PlayaLinda\\ENTIDAD\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -38,11 +38,35 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.DataAnnotations": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.Configuration.CommandLine": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[4.4.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.1, )"
             }
           },
           "imports": [
@@ -55,7 +79,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     }
