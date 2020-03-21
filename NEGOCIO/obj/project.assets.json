@@ -1155,6 +1155,8 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "ENTIDAD": "1.0.0",
+          "Microsoft.AspNetCore.Authentication.Abstractions": "2.2.0",
+          "Microsoft.AspNetCore.Authentication.Core": "2.2.0",
           "Microsoft.AspNetCore.Http.Features": "3.1.2",
           "Microsoft.AspNetCore.Mvc.DataAnnotations": "2.2.0",
           "Microsoft.Extensions.Configuration.Abstractions": "3.1.2",
@@ -1174,6 +1176,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Microsoft.AspNetCore.Authentication.Abstractions": "2.2.0",
+          "Microsoft.AspNetCore.Authentication.Core": "2.2.0",
           "Microsoft.AspNetCore.Http.Features": "2.2.0",
           "Microsoft.AspNetCore.Mvc.DataAnnotations": "2.2.0",
           "Microsoft.Extensions.Configuration.CommandLine": "3.1.2",
@@ -4229,6 +4233,8 @@
     ".NETStandard,Version=v2.0": [
       "DATOS >= 1.0.0",
       "ENTIDAD >= 1.0.0",
+      "Microsoft.AspNetCore.Authentication.Abstractions >= 2.2.0",
+      "Microsoft.AspNetCore.Authentication.Core >= 2.2.0",
       "Microsoft.AspNetCore.Http.Features >= 3.1.2",
       "Microsoft.AspNetCore.Mvc.DataAnnotations >= 2.2.0",
       "Microsoft.Extensions.Configuration.CommandLine >= 3.1.2",
@@ -4240,19 +4246,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jahanel\\.nuget\\packages\\": {}
+    "C:\\Users\\Usuario\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jahanel\\Documents\\Git\\PlayaLinda\\NEGOCIO\\NEGOCIO.csproj",
+      "projectUniqueName": "D:\\Usuarios\\Usuario\\source\\repos\\PlayaLinda\\NEGOCIO\\NEGOCIO.csproj",
       "projectName": "NEGOCIO",
-      "projectPath": "C:\\Users\\Jahanel\\Documents\\Git\\PlayaLinda\\NEGOCIO\\NEGOCIO.csproj",
-      "packagesPath": "C:\\Users\\Jahanel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jahanel\\Documents\\Git\\PlayaLinda\\NEGOCIO\\obj\\",
+      "projectPath": "D:\\Usuarios\\Usuario\\source\\repos\\PlayaLinda\\NEGOCIO\\NEGOCIO.csproj",
+      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+      "outputPath": "D:\\Usuarios\\Usuario\\source\\repos\\PlayaLinda\\NEGOCIO\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Jahanel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4265,11 +4271,11 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\Jahanel\\Documents\\Git\\PlayaLinda\\DATOS\\DATOS.csproj": {
-              "projectPath": "C:\\Users\\Jahanel\\Documents\\Git\\PlayaLinda\\DATOS\\DATOS.csproj"
+            "D:\\Usuarios\\Usuario\\source\\repos\\PlayaLinda\\DATOS\\DATOS.csproj": {
+              "projectPath": "D:\\Usuarios\\Usuario\\source\\repos\\PlayaLinda\\DATOS\\DATOS.csproj"
             },
-            "C:\\Users\\Jahanel\\Documents\\Git\\PlayaLinda\\ENTIDAD\\ENTIDAD.csproj": {
-              "projectPath": "C:\\Users\\Jahanel\\Documents\\Git\\PlayaLinda\\ENTIDAD\\ENTIDAD.csproj"
+            "D:\\Usuarios\\Usuario\\source\\repos\\PlayaLinda\\ENTIDAD\\ENTIDAD.csproj": {
+              "projectPath": "D:\\Usuarios\\Usuario\\source\\repos\\PlayaLinda\\ENTIDAD\\ENTIDAD.csproj"
             }
           }
         }
@@ -4283,6 +4289,14 @@
     "frameworks": {
       "netstandard2.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Authentication.Abstractions": {
+            "target": "Package",
+            "version": "[2.2.0, )"
+          },
+          "Microsoft.AspNetCore.Authentication.Core": {
+            "target": "Package",
+            "version": "[2.2.0, )"
+          },
           "Microsoft.AspNetCore.Http.Features": {
             "target": "Package",
             "version": "[3.1.2, )"
@@ -4328,7 +4342,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

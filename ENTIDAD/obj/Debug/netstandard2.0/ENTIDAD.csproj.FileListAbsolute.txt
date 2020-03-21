@@ -13,14 +13,6 @@ C:\Users\Usuario\source\repos\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDA
 C:\Users\Usuario\source\repos\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.csproj.CopyComplete
 C:\Users\Usuario\source\repos\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.dll
 C:\Users\Usuario\source\repos\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.pdb
-D:\Usuarios\Usuario\source\repos\PlayaLinda\ENTIDAD\bin\Debug\netstandard2.0\ENTIDAD.deps.json
-D:\Usuarios\Usuario\source\repos\PlayaLinda\ENTIDAD\bin\Debug\netstandard2.0\ENTIDAD.dll
-D:\Usuarios\Usuario\source\repos\PlayaLinda\ENTIDAD\bin\Debug\netstandard2.0\ENTIDAD.pdb
-D:\Usuarios\Usuario\source\repos\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.csproj.CoreCompileInputs.cache
-D:\Usuarios\Usuario\source\repos\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.AssemblyInfoInputs.cache
-D:\Usuarios\Usuario\source\repos\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.AssemblyInfo.cs
-D:\Usuarios\Usuario\source\repos\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.dll
-D:\Usuarios\Usuario\source\repos\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.pdb
 C:\Users\Jahanel\Documents\Git\PlayaLinda\ENTIDAD\bin\Debug\netstandard2.0\ENTIDAD.deps.json
 C:\Users\Jahanel\Documents\Git\PlayaLinda\ENTIDAD\bin\Debug\netstandard2.0\ENTIDAD.dll
 C:\Users\Jahanel\Documents\Git\PlayaLinda\ENTIDAD\bin\Debug\netstandard2.0\ENTIDAD.pdb
@@ -29,3 +21,11 @@ C:\Users\Jahanel\Documents\Git\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTID
 C:\Users\Jahanel\Documents\Git\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.AssemblyInfo.cs
 C:\Users\Jahanel\Documents\Git\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.dll
 C:\Users\Jahanel\Documents\Git\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.pdb
+D:\Usuarios\Usuario\source\repos\PlayaLinda\ENTIDAD\bin\Debug\netstandard2.0\ENTIDAD.deps.json
+D:\Usuarios\Usuario\source\repos\PlayaLinda\ENTIDAD\bin\Debug\netstandard2.0\ENTIDAD.dll
+D:\Usuarios\Usuario\source\repos\PlayaLinda\ENTIDAD\bin\Debug\netstandard2.0\ENTIDAD.pdb
+D:\Usuarios\Usuario\source\repos\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.csproj.CoreCompileInputs.cache
+D:\Usuarios\Usuario\source\repos\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.AssemblyInfoInputs.cache
+D:\Usuarios\Usuario\source\repos\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.AssemblyInfo.cs
+D:\Usuarios\Usuario\source\repos\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.dll
+D:\Usuarios\Usuario\source\repos\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.pdb
