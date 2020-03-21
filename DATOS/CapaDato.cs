@@ -107,7 +107,7 @@ namespace DATOS
         }//fin
 
         private List<ENTIDAD.InformacionTexto> listarGaleriaImagenes = new List<ENTIDAD.InformacionTexto>();
-        public IEnumerable<ENTIDAD.InformacionTexto> listadoGaleriaImagenes()
+        public IEnumerable<ENTIDAD.InformacionTexto> listadoGaleriaImagenes(ENTIDAD.InformacionTexto tipoTexto)
         {
             SqlCommand comando = new SqlCommand();
             try
@@ -115,7 +115,7 @@ namespace DATOS
                 comando.Connection = conexion;
               conexion.Open();
                 comando.CommandText = "exec PA_ListarGaleriaImagen @tipoInformacion";
-                comando.Parameters.AddWithValue("@tipoInformacion", 1);
+                comando.Parameters.AddWithValue("@tipoInformacion", tipoTexto.tipoInformacion);
                 SqlDataAdapter da = new SqlDataAdapter(comando);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
@@ -139,8 +139,10 @@ namespace DATOS
             finally {conexion.Close(); }
             return listarGaleriaImagenes;
         }//Fin
+
+
         private List<ENTIDAD.InformacionTexto> listarGaleriaTexto = new List<ENTIDAD.InformacionTexto>();
-        public IEnumerable<ENTIDAD.InformacionTexto> listadoGaleriaTexto()
+        public IEnumerable<ENTIDAD.InformacionTexto> listadoGaleriaTexto(ENTIDAD.InformacionTexto tipoT)
         {
             SqlCommand comando = new SqlCommand();
             try
@@ -148,7 +150,7 @@ namespace DATOS
                 comando.Connection = conexion;
                 conexion.Open();
                 comando.CommandText = "exec PA_ListarGaleriaTexto @tipoInformacion";
-                comando.Parameters.AddWithValue("@tipoInformacion", 1);
+                comando.Parameters.AddWithValue("@tipoInformacion", tipoT.tipoInformacion);
                 SqlDataAdapter da = new SqlDataAdapter(comando);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
@@ -174,8 +176,6 @@ namespace DATOS
             return listarGaleriaTexto;
         }//Fin
 
-
+      
     }
-
-
 }

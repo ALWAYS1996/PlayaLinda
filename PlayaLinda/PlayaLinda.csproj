@@ -277,6 +277,9 @@
     <Content Include="Content\Bootstrap.css" />
     <Content Include="Content\css\estilo.css" />
     <Content Include="Content\css\estiloGaleria.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\img\espalda.png" />
+    <Content Include="Content\img\proximo.png" />
     <Content Include="Content\js\JavaScript.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -288,6 +291,7 @@
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\JQuery.js" />
+    <Content Include="Scripts\main.js" />
     <Content Include="Scripts\Popper.js" />
     <Content Include="Scripts\popup.js" />
     <Content Include="Web.config" />

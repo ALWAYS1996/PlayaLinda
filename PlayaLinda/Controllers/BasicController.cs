@@ -15,17 +15,20 @@ namespace PlayaLinda.Controllers
         NEGOCIO.CapaNegocio capaNegocios = new NEGOCIO.CapaNegocio();
         public ActionResult Inicio()
         {
-            return View();
+            ENTIDAD.InformacionTexto infoTexto = new ENTIDAD.InformacionTexto();
+            infoTexto.tipoInformacion = 2;
+            ViewData["listadoVistazoHotel"] = capaNegocios.listadoGaleriaTexto(infoTexto);
+            return View(capaNegocios.listadoGaleriaImagenes(infoTexto));
         }
         public ActionResult Contacto()
         {
             return View();
         }
-        public ActionResult Nosotros()
-        {
-
-            ViewData["listadoGaleriaTexto"] = capaNegocios.listadoGaleriaTexto();
-            return View(capaNegocios.listadoGaleriaImagenes());
+        public ActionResult Nosotros(){
+            ENTIDAD.InformacionTexto infoTexto = new ENTIDAD.InformacionTexto();
+            infoTexto.tipoInformacion = 1;
+            ViewData["listadoGaleriaTexto"] = capaNegocios.listadoGaleriaTexto(infoTexto);
+            return View(capaNegocios.listadoGaleriaImagenes(infoTexto));
         }
 
        

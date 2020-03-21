@@ -1,8 +1,53 @@
 ﻿@{
-        ViewBag.Title = "Inicio";
-    }
+    ViewBag.Title = "Inicio";
+}
 
-    <div class="row">
+@{ var listadoVistazoHotel = (IEnumerable<ENTIDAD.InformacionTexto>)ViewData["listadoVistazoHotel"];
 
+}
+
+
+@model IEnumerable<ENTIDAD.InformacionTexto>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/main.js"></script>
+</head>
+<body>
+
+ 
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                @foreach (var dato in listadoVistazoHotel)
+                {
+                    <center>  <h3 style="color:black; background-color:aqua"> @Html.DisplayFor(modelItem => dato.titulo)</h3></center>
+                    <center>  <div style="color:black"> @Html.DisplayFor(modelItem => dato.contenido) </div></center>
+
+                }
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="slider-outer">
+            <img src="~/Content/img/espalda.png" class="prev" alt="Prev" />
+            <div class="slider-inner">
+                @foreach (var item in Model)
+                {
+                    <img src='@Html.DisplayFor(modelItem=> item.rutaImagen)' class="responsive active" />
+
+                }
+            </div>
+            <img src="~/Content/img/proximo.png" class="next" alt="Next" />
+        </div>
     </div>
-
+</body>
+</html>

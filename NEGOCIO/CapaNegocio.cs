@@ -17,13 +17,13 @@ namespace NEGOCIO
         {
             return capaDatos.listadoClientes();
         }
-        public IEnumerable<ENTIDAD.InformacionTexto> listadoGaleriaImagenes()
+        public IEnumerable<ENTIDAD.InformacionTexto> listadoGaleriaImagenes(ENTIDAD.InformacionTexto tipoTexto)
         {
-            return capaDatos.listadoGaleriaImagenes();
+            return capaDatos.listadoGaleriaImagenes(tipoTexto);
         }
-        public IEnumerable<ENTIDAD.InformacionTexto> listadoGaleriaTexto()
+        public IEnumerable<ENTIDAD.InformacionTexto> listadoGaleriaTexto(ENTIDAD.InformacionTexto tipoTexto)
         {
-            return capaDatos.listadoGaleriaTexto();
+            return capaDatos.listadoGaleriaTexto(tipoTexto);
         }
         public int registrarGaleriaImagenes(ENTIDAD.InformacionTexto galeria) {
             return capaDatos.registrarGaleriaImagenes(galeria);
