@@ -148,7 +148,7 @@ namespace DATOS
             try
             {
                 comando.Connection = conexion;
-                conexion.Open();
+             conexion.Open();
                 comando.CommandText = "exec PA_ListarGaleriaTexto @tipoInformacion";
                 comando.Parameters.AddWithValue("@tipoInformacion", tipoT.tipoInformacion);
                 SqlDataAdapter da = new SqlDataAdapter(comando);

@@ -275,9 +275,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Bootstrap.css" />
-    <Content Include="Content\css\estilo.css" />
-    <Content Include="Content\css\estiloGaleria.css" />
-    <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\estiloGaleriaImagenes.css" />
+    <Content Include="Content\css\estiloVistazoH.css" />
     <Content Include="Content\img\espalda.png" />
     <Content Include="Content\img\proximo.png" />
     <Content Include="Content\js\JavaScript.js" />

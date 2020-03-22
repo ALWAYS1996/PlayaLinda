@@ -13,9 +13,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="~/Content/css/estiloVistazoH.css" rel="stylesheet" />
     <script src="~/Scripts/jquery-3.3.1.js"></script>
     <script src="~/Scripts/main.js"></script>
+
 </head>
 <body>
 
@@ -27,7 +28,7 @@
             <div class="col-12">
                 @foreach (var dato in listadoVistazoHotel)
                 {
-                    <center>  <h3 style="color:black; background-color:aqua"> @Html.DisplayFor(modelItem => dato.titulo)</h3></center>
+                    <center>  <h3 style="color:black; background-color:cornflowerblue"> @Html.DisplayFor(modelItem => dato.titulo)</h3></center>
                     <center>  <div style="color:black"> @Html.DisplayFor(modelItem => dato.contenido) </div></center>
 
                 }

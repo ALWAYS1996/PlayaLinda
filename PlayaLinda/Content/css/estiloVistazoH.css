@@ -1,10 +1,10 @@
 
 
 
-.container{
-	width:1000px;
-	margin:40px auto;
-	overflow:auto;
+.container {
+	width: 1000px;
+	margin: 40px auto;
+	overflow: auto;
 }
 
 .slider-inner{
@@ -13,7 +13,7 @@
 	position:relative;
 	overflow:hidden;
 	float:left;
-	padding:3px;
+	padding:4px;
 	border:#666 solid 1px;
 }
 
