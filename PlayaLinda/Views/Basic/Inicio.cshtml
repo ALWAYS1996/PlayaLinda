@@ -20,35 +20,56 @@
 </head>
 <body>
 
- 
-
-
     <div class="container">
-        <div class="row">
-            <div class="col-12">
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <div class="slider-outer">
+
+                    <div id="carouselExampleControls" class=" slider-inner">
+                        @foreach (var item in Model)
+                        {
+                            <img src='@Html.DisplayFor(modelItem=> item.rutaImagen)' class="responsive active" />
+
+                        }
+                    </div>
+                    <a class="carousel-control-prev prev" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next next" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+
                 @foreach (var dato in listadoVistazoHotel)
                 {
                     <center>  <h3 style="color:black; background-color:cornflowerblue"> @Html.DisplayFor(modelItem => dato.titulo)</h3></center>
                     <center>  <div style="color:black"> @Html.DisplayFor(modelItem => dato.contenido) </div></center>
 
                 }
-            </div>
-        </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <div class="slider-outer">
-            <img src="~/Content/img/espalda.png" class="prev" alt="Prev" />
-            <div class="slider-inner">
-                @foreach (var item in Model)
-                {
-                    <img src='@Html.DisplayFor(modelItem=> item.rutaImagen)' class="responsive active" />
 
-                }
             </div>
-            <img src="~/Content/img/proximo.png" class="next" alt="Next" />
         </div>
     </div>
+
+  
+
 </body>
+
 </html>
+
+
+
+
+
+
+
+
+
+
+
