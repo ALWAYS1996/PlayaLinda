@@ -29,3 +29,4 @@ D:\Usuarios\Usuario\source\repos\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENT
 D:\Usuarios\Usuario\source\repos\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.AssemblyInfo.cs
 D:\Usuarios\Usuario\source\repos\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.dll
 D:\Usuarios\Usuario\source\repos\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.pdb
+D:\Usuarios\Usuario\source\repos\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.csprojAssemblyReference.cache

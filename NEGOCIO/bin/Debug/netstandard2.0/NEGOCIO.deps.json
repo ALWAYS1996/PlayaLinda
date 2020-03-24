@@ -940,7 +940,6 @@
       "DATOS/1.0.0": {
         "dependencies": {
           "ENTIDAD": "1.0.0",
-          "Microsoft.AspNetCore.Authentication.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Authentication.Core": "2.2.0",
           "Microsoft.AspNetCore.Http.Features": "3.1.2",
           "Microsoft.AspNetCore.Mvc.DataAnnotations": "2.2.0",
@@ -956,7 +955,6 @@
       },
       "ENTIDAD/1.0.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.Authentication.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Authentication.Core": "2.2.0",
           "Microsoft.AspNetCore.Http.Features": "3.1.2",
           "Microsoft.AspNetCore.Mvc.DataAnnotations": "2.2.0",
