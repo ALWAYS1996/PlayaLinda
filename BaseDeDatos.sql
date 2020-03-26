@@ -52,12 +52,12 @@ ALTER TABLE Empleado DROP COLUMN dummy;
 
 DROP TABLE IF EXISTS Promocion;
 CREATE TABLE Promocion(dummy int);
-ALTER TABLE Promocion ADD COLUMN idPromocion smallint IDENTITY(1,1);
-ALTER TABLE Promocion ADD COLUMN fechaInicio date;
-ALTER TABLE Promocion ADD COLUMN fechaFinal date;
-ALTER TABLE Promocion ADD COLUMN informacion varchar(300);
-ALTER TABLE Promocion ADD COLUMN rebaja int;
-ALTER TABLE Promocion DROP COLUMN dummy;
+ALTER TABLE Promocion ADD  idPromocion smallint IDENTITY(1,1) primary key;
+ALTER TABLE Promocion ADD  fechaInicio date;
+ALTER TABLE Promocion ADD  fechaFinal date;
+ALTER TABLE Promocion ADD  informacion varchar(300);
+ALTER TABLE Promocion ADD  rebaja int;
+--ALTER TABLE Promocion DROP  dummy;
 
 --------------------------
 -- Definicion de tablas --
