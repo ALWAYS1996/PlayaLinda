@@ -57,7 +57,7 @@ ALTER TABLE Promocion ADD  fechaInicio date;
 ALTER TABLE Promocion ADD  fechaFinal date;
 ALTER TABLE Promocion ADD  informacion varchar(300);
 ALTER TABLE Promocion ADD  rebaja int;
---ALTER TABLE Promocion DROP  dummy;
+ALTER TABLE Promocion DROP  dummy;
 
 --------------------------
 -- Definicion de tablas --
