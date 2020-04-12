@@ -31,21 +31,21 @@ namespace ENTIDAD
         {
         }
 
-        public InformacionTexto(string codigoInformacionTexto, string contenido, string rutaImagen)
+        public InformacionTexto(int tipoInformacion, string contenido, string titulo)
         {
-            this.codigoInformacionTexto = codigoInformacionTexto;
+            this.tipoInformacion = tipoInformacion;
             this.contenido = contenido;
-            this.rutaImagen = rutaImagen;
+            this.titulo = titulo;
         }
         public InformacionTexto(int tipoInformacion, string rutaImagen)
         {
             this.tipoInformacion = tipoInformacion;
             this.rutaImagen = rutaImagen;
         }
-        public InformacionTexto(string contenido, string titulo)
+        public InformacionTexto(int tipoInformacion)
         {
-            this.titulo = titulo;
-            this.contenido = contenido;
+            this.tipoInformacion = tipoInformacion;
+       
         }
 
     }

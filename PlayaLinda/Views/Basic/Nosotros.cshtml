@@ -40,50 +40,34 @@
 
 
 <!--------------------------- ------------------------------------>
+@model IEnumerable<ENTIDAD.InformacionTexto>
 
 @{ var listadoGaleriaTexto = (IEnumerable<ENTIDAD.InformacionTexto>)ViewData["listadoGaleriaTexto"];
 
 }
-@model IEnumerable<ENTIDAD.InformacionTexto>
 
 
-
-
-<html lang="en">
-<head>
-    <link href="~/Content/css/estiloGaleriaImagenes.css" rel="stylesheet" />
-
-    @*<link href="~/Content/css/estiloVistazoH.css" rel="stylesheet" />*@
-
- 
-</head>
+<link href="~/Content/css/estiloGaleriaImagenes.css" rel="stylesheet" />
 <body class="scroll">
-
-
-    <div class="container " >
-
+    <div class="container ">
         <div class="row">
             <div class="col-12">
                 @foreach (var dato in listadoGaleriaTexto)
                 {
                     <center>  <h3 class="titulo" style="color:black; background-color:cornflowerblue"> @Html.DisplayFor(modelItem => dato.titulo)</h3></center>
-
+                    <br>
                     <center>  <div style="color:black"> @Html.DisplayFor(modelItem => dato.contenido) </div></center>
 
                 }
             </div>
         </div>
         <br>
-
         <div class="contenedor-galeria">
             @foreach (var item in Model)
             {
-
-
                 <img src="@Html.DisplayFor(modelItem=> item.rutaImagen)" class="galeria__img" />
             }
         </div>
 
     </div>
 </body>
-</html>

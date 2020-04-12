@@ -276,8 +276,11 @@
   <ItemGroup>
     <Content Include="Content\Bootstrap.css" />
     <Content Include="Content\css\estiloGaleriaImagenes.css" />
+    <Content Include="Content\css\Estilos.css" />
     <Content Include="Content\css\estiloVistazoH.css" />
     <Content Include="Content\img\espalda.png" />
+    <Content Include="Content\img\mapa.svg" />
+    <Content Include="Content\img\ojo.svg" />
     <Content Include="Content\img\proximo.png" />
     <Content Include="Content\js\JavaScript.js" />
     <Content Include="favicon.ico" />
@@ -286,6 +289,7 @@
     <Content Include="Content\img\logoPagina.PNG" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\autocompletar.js" />
     <Content Include="Scripts\Bootstrap.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -293,6 +297,7 @@
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\Popper.js" />
     <Content Include="Scripts\popup.js" />
+    <Content Include="Scripts\TrazarRuta.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -323,6 +328,7 @@
     <Content Include="Views\Basic\Tarifas.cshtml" />
     <Content Include="Views\Basic\Reservar.cshtml" />
     <Content Include="Views\Basic\View.cshtml" />
+    <Content Include="Views\Basic\Mapa.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ENTIDAD\ENTIDAD.csproj">

@@ -15,19 +15,26 @@ namespace PlayaLinda.Controllers
         NEGOCIO.CapaNegocio capaNegocios = new NEGOCIO.CapaNegocio();
         public ActionResult Inicio()
         {
-            ENTIDAD.InformacionTexto infoTexto = new ENTIDAD.InformacionTexto();
-            infoTexto.tipoInformacion = 2;
-            ViewData["listadoVistazoHotel"] = capaNegocios.listadoGaleriaTexto(infoTexto);
+            ENTIDAD.InformacionTexto infoTexto = new ENTIDAD.InformacionTexto(2);
+            ViewData["listadoVistazoHotel"] = capaNegocios.listadoTexto(infoTexto);
             return View(capaNegocios.listadoGaleriaImagenes(infoTexto));
         }
-        public ActionResult Contacto()
-        {
+        public ActionResult Contacto(){
             return View();
         }
+        [HttpPost]
+        public ViewResult Mapa(string lat,string lng)
+        {
+            ENTIDAD.Mapa mapa = new ENTIDAD.Mapa();  mapa.latitudOrigen = lat;  mapa.longitudOrigen = lng;
+            ENTIDAD.InformacionTexto infoTexto = new ENTIDAD.InformacionTexto(3);
+            ViewData["listadoTexto"] = capaNegocios.listadoTexto(infoTexto);
+            capaNegocios.modificarCoordenadasOrigen(mapa);
+           return View(capaNegocios.listadoCoordenadasOrigen());
+  
+        }
         public ActionResult Nosotros(){
-            ENTIDAD.InformacionTexto infoTexto = new ENTIDAD.InformacionTexto();
-            infoTexto.tipoInformacion = 1;
-            ViewData["listadoGaleriaTexto"] = capaNegocios.listadoGaleriaTexto(infoTexto);
+            ENTIDAD.InformacionTexto infoTexto = new ENTIDAD.InformacionTexto(1);
+            ViewData["listadoGaleriaTexto"] = capaNegocios.listadoTexto(infoTexto);
             return View(capaNegocios.listadoGaleriaImagenes(infoTexto));
         }
 
@@ -35,13 +42,10 @@ namespace PlayaLinda.Controllers
 
 
         [HttpPost]
-        public ActionResult RegistrarGaleriaImagenes(HttpPostedFileBase fileUpload)
-        {
+        public ActionResult RegistrarGaleriaImagenes(HttpPostedFileBase fileUpload) {
             try {
-
-                string path = Server.MapPath("~/Content/img/");
-
-                if (!Directory.Exists(path)) {
+                 string path = Server.MapPath("~/Content/img/");
+                   if (!Directory.Exists(path)) {
                     Directory.CreateDirectory(path);
                 }
                 fileUpload.SaveAs(path +Path.GetFileName(fileUpload.FileName));

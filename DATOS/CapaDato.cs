@@ -17,6 +17,43 @@ namespace DATOS
             this.conexion = Conexion.getConexion();
         }
 
+        private List<ENTIDAD.Mapa> listarCoordenadasOrigen = new List<ENTIDAD.Mapa>();
+        public IEnumerable<ENTIDAD.Mapa> listadoCoordenadasOrigen()
+        {
+            SqlCommand comando = new SqlCommand();
+            try
+            {
+                comando.Connection = conexion;
+                conexion.Open();
+                comando.CommandText = "exec PA_ListarCoordenadasOrigen";
+
+                SqlDataAdapter da = new SqlDataAdapter(comando);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+
+                ENTIDAD.Mapa mapa = null;
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    for (int i = 0; i <= ds.Tables[0].Rows.Count - 1; i++)
+                    {
+                        mapa = new ENTIDAD.Mapa();
+                        mapa.latitudOrigen =(ds.Tables[0].Rows[i][0].ToString());
+                        mapa.longitudOrigen = (ds.Tables[0].Rows[i][1].ToString());
+
+                        listarCoordenadasOrigen.Add(mapa);
+                    }
+                }
+                int result = comando.ExecuteNonQuery();
+
+                return listarCoordenadasOrigen;
+            }
+            catch (Exception) { }
+            finally { conexion.Close(); }
+            return listarCoordenadasOrigen;
+        }//Fin
+
+
         private List<ENTIDAD.Cliente> listarCliente = new List<ENTIDAD.Cliente>();
         public IEnumerable<ENTIDAD.Cliente> listadoClientes()
         {
@@ -58,6 +95,29 @@ namespace DATOS
                     return listarCliente;
         }//Fin
 
+        public int modificarCoordenadasOrigen(ENTIDAD.Mapa mapa)
+        {
+            SqlCommand comando = new SqlCommand();
+            try
+            {
+                conexion.Open();
+                comando.Connection = conexion;
+                comando.CommandText = "exec PA_ModificarCoordenadasOrigen @latitudOrigen,@longitudOrigen";
+                comando.Parameters.AddWithValue("@latitudOrigen", mapa.latitudOrigen);
+                comando.Parameters.AddWithValue("@longitudOrigen", mapa.longitudOrigen);
+                int result = comando.ExecuteNonQuery();
+                if (result == -1){
+                    return 1;
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+            catch (Exception) { }
+            finally { conexion.Close(); }
+            return 0;
+        }//fin
         public int registrarGaleriaImagenes(ENTIDAD.InformacionTexto infoTexto)
         {
             SqlCommand comando = new SqlCommand();
@@ -141,8 +201,8 @@ namespace DATOS
         }//Fin
 
 
-        private List<ENTIDAD.InformacionTexto> listarGaleriaTexto = new List<ENTIDAD.InformacionTexto>();
-        public IEnumerable<ENTIDAD.InformacionTexto> listadoGaleriaTexto(ENTIDAD.InformacionTexto tipoT)
+        private List<ENTIDAD.InformacionTexto> listarTexto = new List<ENTIDAD.InformacionTexto>();
+        public IEnumerable<ENTIDAD.InformacionTexto> listadoTexto(ENTIDAD.InformacionTexto tipoT)
         {
             SqlCommand comando = new SqlCommand();
             try
@@ -164,16 +224,16 @@ namespace DATOS
                         galeria = new ENTIDAD.InformacionTexto();
                         galeria.titulo = (ds.Tables[0].Rows[i][0].ToString());
                         galeria.contenido = (ds.Tables[0].Rows[i][1].ToString());
-                        listarGaleriaTexto.Add(galeria);
+                        listarTexto.Add(galeria);
                     }
                 }
                 int result = comando.ExecuteNonQuery();
 
-                return listarGaleriaTexto;
+                return listarTexto;
             }
             catch (Exception) { }
             finally { conexion.Close(); }
-            return listarGaleriaTexto;
+            return listarTexto;
         }//Fin
 
       

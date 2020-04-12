@@ -31,17 +31,3 @@ C:\Users\Jahanel\Documents\Git\PlayaLinda\NEGOCIO\obj\Debug\netstandard2.0\NEGOC
 C:\Users\Jahanel\Documents\Git\PlayaLinda\NEGOCIO\obj\Debug\netstandard2.0\NEGOCIO.csproj.CopyComplete
 C:\Users\Jahanel\Documents\Git\PlayaLinda\NEGOCIO\obj\Debug\netstandard2.0\NEGOCIO.dll
 C:\Users\Jahanel\Documents\Git\PlayaLinda\NEGOCIO\obj\Debug\netstandard2.0\NEGOCIO.pdb
-D:\Usuarios\Usuario\source\repos\PlayaLinda\NEGOCIO\bin\Debug\netstandard2.0\NEGOCIO.deps.json
-D:\Usuarios\Usuario\source\repos\PlayaLinda\NEGOCIO\bin\Debug\netstandard2.0\NEGOCIO.dll
-D:\Usuarios\Usuario\source\repos\PlayaLinda\NEGOCIO\bin\Debug\netstandard2.0\NEGOCIO.pdb
-D:\Usuarios\Usuario\source\repos\PlayaLinda\NEGOCIO\bin\Debug\netstandard2.0\DATOS.dll
-D:\Usuarios\Usuario\source\repos\PlayaLinda\NEGOCIO\bin\Debug\netstandard2.0\ENTIDAD.dll
-D:\Usuarios\Usuario\source\repos\PlayaLinda\NEGOCIO\bin\Debug\netstandard2.0\DATOS.pdb
-D:\Usuarios\Usuario\source\repos\PlayaLinda\NEGOCIO\bin\Debug\netstandard2.0\ENTIDAD.pdb
-D:\Usuarios\Usuario\source\repos\PlayaLinda\NEGOCIO\obj\Debug\netstandard2.0\NEGOCIO.csprojAssemblyReference.cache
-D:\Usuarios\Usuario\source\repos\PlayaLinda\NEGOCIO\obj\Debug\netstandard2.0\NEGOCIO.csproj.CoreCompileInputs.cache
-D:\Usuarios\Usuario\source\repos\PlayaLinda\NEGOCIO\obj\Debug\netstandard2.0\NEGOCIO.AssemblyInfoInputs.cache
-D:\Usuarios\Usuario\source\repos\PlayaLinda\NEGOCIO\obj\Debug\netstandard2.0\NEGOCIO.AssemblyInfo.cs
-D:\Usuarios\Usuario\source\repos\PlayaLinda\NEGOCIO\obj\Debug\netstandard2.0\NEGOCIO.csproj.CopyComplete
-D:\Usuarios\Usuario\source\repos\PlayaLinda\NEGOCIO\obj\Debug\netstandard2.0\NEGOCIO.dll
-D:\Usuarios\Usuario\source\repos\PlayaLinda\NEGOCIO\obj\Debug\netstandard2.0\NEGOCIO.pdb

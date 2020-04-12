@@ -13,23 +13,31 @@ namespace NEGOCIO
         DATOS.CapaDato capaDatos = new DATOS.CapaDato();
 
 
+        public IEnumerable<ENTIDAD.Mapa> listadoCoordenadasOrigen()
+        {
+            return capaDatos.listadoCoordenadasOrigen();
+        }
         public IEnumerable<ENTIDAD.Cliente> listadoClientes()
         {
             return capaDatos.listadoClientes();
         }
-        public IEnumerable<ENTIDAD.InformacionTexto> listadoGaleriaImagenes(ENTIDAD.InformacionTexto tipoTexto)
+        public IEnumerable<ENTIDAD.InformacionTexto> listadoGaleriaImagenes(ENTIDAD.InformacionTexto informacionTexto)
         {
-            return capaDatos.listadoGaleriaImagenes(tipoTexto);
+            return capaDatos.listadoGaleriaImagenes(informacionTexto);
         }
-        public IEnumerable<ENTIDAD.InformacionTexto> listadoGaleriaTexto(ENTIDAD.InformacionTexto tipoTexto)
+        public IEnumerable<ENTIDAD.InformacionTexto> listadoTexto(ENTIDAD.InformacionTexto informacionTexto)
         {
-            return capaDatos.listadoGaleriaTexto(tipoTexto);
+            return capaDatos.listadoTexto(informacionTexto);
         }
-        public int registrarGaleriaImagenes(ENTIDAD.InformacionTexto galeria) {
-            return capaDatos.registrarGaleriaImagenes(galeria);
+        public int registrarGaleriaImagenes(ENTIDAD.InformacionTexto informacionTexto) {
+            return capaDatos.registrarGaleriaImagenes(informacionTexto);
         }
-        public int registrarGaleriaTexto(ENTIDAD.InformacionTexto galeria) { 
-           return capaDatos.registrarGaleriaTexto(galeria);
+        public int registrarGaleriaTexto(ENTIDAD.InformacionTexto informacionTexto) { 
+           return capaDatos.registrarGaleriaTexto(informacionTexto);
+        }
+        public int modificarCoordenadasOrigen(ENTIDAD.Mapa mapa)
+        {
+            return capaDatos.modificarCoordenadasOrigen(mapa);
         }
     }
 }
