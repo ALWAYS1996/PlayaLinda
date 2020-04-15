@@ -35,12 +35,13 @@ ALTER TABLE Cliente DROP COLUMN dummy;
 DROP TABLE IF EXISTS Habitacion;
 CREATE TABLE Habitacion(dummy int);
 ALTER TABLE Habitacion ADD idHabitacion tinyint IDENTITY(1,1);
-ALTER TABLE Habitacion ADD tipoHabitacion tinyint;
+ALTER TABLE Habitacion ADD idTipoHabitacion int;
 ALTER TABLE Habitacion ADD idCliente int;
 ALTER TABLE Habitacion ADD vacante tinyint;
 ALTER TABLE Habitacion ADD capacidad tinyint;
 ALTER TABLE Habitacion ADD CONSTRAINT PK_Habitacion PRIMARY KEY (idHabitacion);
 ALTER TABLE Habitacion ADD CONSTRAINT FK_idCliente FOREIGN KEY (idCliente ) REFERENCES Cliente(idCliente)  ON UPDATE CASCADE
+ALTER TABLE Habitacion ADD CONSTRAINT FK_idTipoHabitacion FOREIGN KEY (idTipoHabitacion ) REFERENCES TipoHabitacion(idTipoHabitacion)  ON UPDATE CASCADE
 ALTER TABLE Habitacion DROP COLUMN dummy;
 
 DROP TABLE IF EXISTS Reservacion;
@@ -55,11 +56,6 @@ ALTER TABLE Reservacion   ADD CONSTRAINT FK_idCliente1 FOREIGN KEY (idCliente)  
 ALTER TABLE Reservacion   ADD CONSTRAINT FK_idHabitacion  FOREIGN KEY (idHabitacion )REFERENCES Habitacion(idHabitacion )  ON UPDATE CASCADE
 ALTER TABLE Reservacion DROP COLUMN dummy;
 
-
-
-
-
-
 DROP TABLE IF EXISTS TipoHabitacion;
 CREATE TABLE TipoHabitacion(dummy int);
 ALTER TABLE TipoHabitacion ADD idTipoHabitacion int IDENTITY(1,1);
@@ -67,7 +63,6 @@ ALTER TABLE TipoHabitacion ADD nombreTipoHabitacion varchar(25);
 ALTER TABLE TipoHabitacion ADD precioBase int;
 ALTER TABLE TipoHabitacion ADD CONSTRAINT PK_TipoHabitacion PRIMARY KEY(idTipoHabitacion);
 ALTER TABLE TipoHabitacion DROP COLUMN dummy;
-
 
 DROP TABLE IF EXISTS Empleado;
 CREATE TABLE Empleado(dummy int);
@@ -165,31 +160,25 @@ AS SET NOCOUNT ON;
 Select  idCliente, pasaporte, nombre, primerApellido, segundoApellido, edad, correo, nacionalidad From Cliente   
 GO
 -------------------------------------------------------------------------------------------------------------------------
-CREATE PROCEDURE PA_FiltrarClienteById(@idCliente  int)
+ALTER PROCEDURE PA_RegistrarHabitacion(
+@idTipoHabitacion INT,
+@idCliente  INT,
+@vacante   nvarchar(50),
+@capacidad   tinyint)
 AS SET NOCOUNT ON;
-Select  idCliente, pasaporte, nombre, primerApellido, segundoApellido, edad, correo, nacionalidad From Cliente    where idCliente=@idCliente  
-GO
-
--------------------------------------------------------------------------------------------------------------------------
-CREATE PROCEDURE PA_RegistrarHabitacion(
-@tipoHabitacion  tinyint,
-@idCliente  int NULL,
-@vacante   nvarchar(50)  NULL,
-@capacidad   tinyint NULL)
-AS SET NOCOUNT ON;
-INSERT INTO Habitacion (tipoHabitacion,idCliente,vacante,capacidad)VALUES(@tipoHabitacion,@idCliente,
-@vacante,@capacidad )
+INSERT INTO Habitacion (idCliente,vacante,capacidad,idTipoHabitacion)VALUES(@idCliente,
+@vacante,@capacidad,@idTipoHabitacion )
 GO
 -------------------------------------------------------------------------------------------------------------------------
 ALTER PROCEDURE PA_ModificarHabitacion(
-@idHabitacion  int  NULL ,
-@tipoHabitacion  tinyint,
-@idCliente  int   NULL,
-@vacante   nvarchar(50)   NULL,
+@idHabitacion INT,
+@idTipoHabitacion  INT,
+@idCliente INT,
+@vacante   nvarchar(50),
 @capacidad   tinyint
 )
 AS SET NOCOUNT ON;
-UPDATE Habitacion  set tipoHabitacion=@tipoHabitacion,
+UPDATE Habitacion  set idTipoHabitacion=@idTipoHabitacion,
 vacante=@vacante,
 idCliente=@idCliente,
 capacidad=@capacidad
@@ -208,13 +197,6 @@ CREATE PROCEDURE PA_ListarHabitacion
 AS SET NOCOUNT ON;
 Select  idHabitacion , idCliente, vacante, capacidad From Habitacion   
 GO
-
--------------------------------------------------------------------------------------------------------------------------
-CREATE PROCEDURE PA_FiltrarHabitacionById(@idHabitacion   int )
-AS SET NOCOUNT ON;
-Select  idHabitacion , idCliente, vacante, capacidad  From Habitacion    where idHabitacion =@idHabitacion   
-GO
-
 -------------------------------------------------------------------------------------------------------------------------
 CREATE PROCEDURE PA_RegistrarReservacion(
 @idHabitacion tinyint,
@@ -289,11 +271,6 @@ AS SET NOCOUNT ON;
 Select idTipoHabitacion ,nombreTipoHabitacion,precioBase From TipoHabitacion 
 GO
 -------------------------------------------------------------------------------------------------------------------------
-CREATE PROCEDURE PA_FiltrarTipoHabitacionById(@idTipoHabitacion int)
-AS SET NOCOUNT ON;
-Select idTipoHabitacion ,nombreTipoHabitacion,precioBase From TipoHabitacion  WHERE idTipoHabitacion=@idTipoHabitacion 
-GO
--------------------------------------------------------------------------------------------------------------------------
 CREATE PROCEDURE PA_RegistrarEmpleado(
 @tipoEmpleado tinyint,
 @idUsuario varchar(50),
@@ -324,12 +301,6 @@ CREATE PROCEDURE PA_ListarEmpleado
 AS SET NOCOUNT ON;
 Select idEmpleado,tipoEmpleado,idUsuario,contrasenna
  From Empleado 
-GO
--------------------------------------------------------------------------------------------------------------------------
-CREATE PROCEDURE PA_FiltrarEmpleadoById(@idEmpleado smallint)
-AS SET NOCOUNT ON;
-Select idEmpleado,tipoEmpleado,idUsuario,contrasenna
- From Empleado WHERE idEmpleado=@idEmpleado
 GO
 -------------------------------------------------------------------------------------------------------------------------
 CREATE PROCEDURE PA_RegistrarPromocion(
@@ -365,11 +336,6 @@ AS SET NOCOUNT ON;
 Select idPromocion,fechaInicio,fechaFinal,informacion,rebaja From Promocion 
 GO
 -------------------------------------------------------------------------------------------------------------------------
-CREATE PROCEDURE PA_FiltrarPromocionById(@idPromocion smallint)
-AS SET NOCOUNT ON;
-Select idPromocion,fechaInicio,fechaFinal,informacion,rebaja From Promocion  WHERE idPromocion = @idPromocion 
-GO
--------------------------------------------------------------------------------------------------------------------------
 CREATE PROCEDURE PA_RegistrarPublicidad (
 @rutaImagen varchar(255),
 @link varchar(255))
@@ -397,11 +363,6 @@ GO
 CREATE PROCEDURE PA_ListarPublicidad 
 AS SET NOCOUNT ON;
 Select idPublicidad,rutaImagen,link From Publicidad 
-GO
--------------------------------------------------------------------------------------------------------------------------
-CREATE PROCEDURE PA_FiltrarPublicidadById(@idPublicidad smallint)
-AS SET NOCOUNT ON;
-Select idPublicidad ,rutaImagen,link  From Publicidad  WHERE idPublicidad=@idPublicidad
 GO
 -------------------------------------------------------------------------------------------------------------------------
 ALTER PROCEDURE PA_informacionTexto(
@@ -433,11 +394,6 @@ GO
 ALTER PROCEDURE PA_ListarInformacionTexto(@tipoInformacion int)
 AS SET NOCOUNT ON;
 Select idInformacionTexto,rutaImagen,contenido,titulo  From informacionTexto WHERE tipoInformacion=@tipoInformacion
-GO
--------------------------------------------------------------------------------------------------------------------------
-CREATE PROCEDURE PA_FiltrarinformacionTextoById(@idInformacionTexto int)
-AS SET NOCOUNT ON;
-Select idInformacionTexto,rutaImagen,contenido,titulo  From informacionTexto WHERE idInformacionTexto=@idInformacionTexto 
 GO
 -------------------------------------------------------------------------------------------------------------------------
 ALTER PROCEDURE PA_RegistrarGaleriaImagen(@rutaImagen varchar(255),
