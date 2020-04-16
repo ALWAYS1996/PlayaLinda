@@ -1,7 +1,20 @@
-﻿
-@{
-    ViewBag.Title = "Facilidades";
+﻿@model IEnumerable<ENTIDAD.TipoHabitacion>
+@{ var listaTipoHabitacion = (IEnumerable<ENTIDAD.TipoHabitacion>)ViewData["listaTipoHabitaciones"];
+    ViewBag.Title = "Inicio";
 }
 
-<h2>Facilidades</h2>
 
+@foreach (var item in Model)
+{
+    
+    <div class="card" style="width:400px">
+        <img class="card-img-top" src="~/Content/img/playa1.jpg" alt="Card image">
+        <div class="card-body">
+            <h4 class="card-title">John Doe</h4>
+            <p class="card-text">Some example text.</p>
+            <a href="#" class="btn btn-primary">See Profile</a>
+        </div>
+    </div>
+    <br />
+    <br />
+}

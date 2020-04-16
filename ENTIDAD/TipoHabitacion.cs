@@ -21,6 +21,10 @@ namespace ENTIDAD
         [Display(Name = "Precio")]
         public int precio { get; set; }
 
+        [DisplayFormat(NullDisplayText = "Sin Respuesta")]
+        [Display(Name = "descripcion")]
+        public string descripcion { get; set; }
+
         public TipoHabitacion()
         {
         }

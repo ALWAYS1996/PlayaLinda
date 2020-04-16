@@ -45,3 +45,17 @@ D:\Usuarios\Usuario\source\repos\PlayaLinda\NEGOCIO\obj\Debug\netstandard2.0\NEG
 D:\Usuarios\Usuario\source\repos\PlayaLinda\NEGOCIO\obj\Debug\netstandard2.0\NEGOCIO.csproj.CopyComplete
 D:\Usuarios\Usuario\source\repos\PlayaLinda\NEGOCIO\obj\Debug\netstandard2.0\NEGOCIO.dll
 D:\Usuarios\Usuario\source\repos\PlayaLinda\NEGOCIO\obj\Debug\netstandard2.0\NEGOCIO.pdb
+C:\Users\gmg55\Desktop\personal\UCR\1Semestre2020\PlayaLinda\NEGOCIO\bin\Debug\netstandard2.0\NEGOCIO.deps.json
+C:\Users\gmg55\Desktop\personal\UCR\1Semestre2020\PlayaLinda\NEGOCIO\bin\Debug\netstandard2.0\NEGOCIO.dll
+C:\Users\gmg55\Desktop\personal\UCR\1Semestre2020\PlayaLinda\NEGOCIO\bin\Debug\netstandard2.0\NEGOCIO.pdb
+C:\Users\gmg55\Desktop\personal\UCR\1Semestre2020\PlayaLinda\NEGOCIO\bin\Debug\netstandard2.0\DATOS.dll
+C:\Users\gmg55\Desktop\personal\UCR\1Semestre2020\PlayaLinda\NEGOCIO\bin\Debug\netstandard2.0\ENTIDAD.dll
+C:\Users\gmg55\Desktop\personal\UCR\1Semestre2020\PlayaLinda\NEGOCIO\bin\Debug\netstandard2.0\DATOS.pdb
+C:\Users\gmg55\Desktop\personal\UCR\1Semestre2020\PlayaLinda\NEGOCIO\bin\Debug\netstandard2.0\ENTIDAD.pdb
+C:\Users\gmg55\Desktop\personal\UCR\1Semestre2020\PlayaLinda\NEGOCIO\obj\Debug\netstandard2.0\NEGOCIO.csprojAssemblyReference.cache
+C:\Users\gmg55\Desktop\personal\UCR\1Semestre2020\PlayaLinda\NEGOCIO\obj\Debug\netstandard2.0\NEGOCIO.csproj.CoreCompileInputs.cache
+C:\Users\gmg55\Desktop\personal\UCR\1Semestre2020\PlayaLinda\NEGOCIO\obj\Debug\netstandard2.0\NEGOCIO.AssemblyInfoInputs.cache
+C:\Users\gmg55\Desktop\personal\UCR\1Semestre2020\PlayaLinda\NEGOCIO\obj\Debug\netstandard2.0\NEGOCIO.AssemblyInfo.cs
+C:\Users\gmg55\Desktop\personal\UCR\1Semestre2020\PlayaLinda\NEGOCIO\obj\Debug\netstandard2.0\NEGOCIO.csproj.CopyComplete
+C:\Users\gmg55\Desktop\personal\UCR\1Semestre2020\PlayaLinda\NEGOCIO\obj\Debug\netstandard2.0\NEGOCIO.dll
+C:\Users\gmg55\Desktop\personal\UCR\1Semestre2020\PlayaLinda\NEGOCIO\obj\Debug\netstandard2.0\NEGOCIO.pdb

@@ -30,3 +30,12 @@ D:\Usuarios\Usuario\source\repos\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENT
 D:\Usuarios\Usuario\source\repos\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.AssemblyInfo.cs
 D:\Usuarios\Usuario\source\repos\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.dll
 D:\Usuarios\Usuario\source\repos\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.pdb
+C:\Users\gmg55\Desktop\personal\UCR\1Semestre2020\PlayaLinda\ENTIDAD\bin\Debug\netstandard2.0\ENTIDAD.deps.json
+C:\Users\gmg55\Desktop\personal\UCR\1Semestre2020\PlayaLinda\ENTIDAD\bin\Debug\netstandard2.0\ENTIDAD.dll
+C:\Users\gmg55\Desktop\personal\UCR\1Semestre2020\PlayaLinda\ENTIDAD\bin\Debug\netstandard2.0\ENTIDAD.pdb
+C:\Users\gmg55\Desktop\personal\UCR\1Semestre2020\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.csprojAssemblyReference.cache
+C:\Users\gmg55\Desktop\personal\UCR\1Semestre2020\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.csproj.CoreCompileInputs.cache
+C:\Users\gmg55\Desktop\personal\UCR\1Semestre2020\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.AssemblyInfoInputs.cache
+C:\Users\gmg55\Desktop\personal\UCR\1Semestre2020\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.AssemblyInfo.cs
+C:\Users\gmg55\Desktop\personal\UCR\1Semestre2020\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.dll
+C:\Users\gmg55\Desktop\personal\UCR\1Semestre2020\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.pdb
