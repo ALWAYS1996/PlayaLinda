@@ -22,6 +22,10 @@ namespace ENTIDAD
         public int precio { get; set; }
 
         [DisplayFormat(NullDisplayText = "Sin Respuesta")]
+        [Display(Name = "urlImg")]
+        public string urlImg { get; set; }
+
+        [DisplayFormat(NullDisplayText = "Sin Respuesta")]
         [Display(Name = "descripcion")]
         public string descripcion { get; set; }
 

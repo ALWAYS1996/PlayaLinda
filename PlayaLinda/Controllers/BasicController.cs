@@ -58,12 +58,12 @@ namespace PlayaLinda.Controllers
             }
             return Json(new {Value=false, Message="Subido con exito" }, JsonRequestBehavior.AllowGet);
        }
-        NEGOCIO.HabitacionCapaNegocio habitacionCapaNegocio = new NEGOCIO.HabitacionCapaNegocio();
+        NEGOCIO.FacilidadesCapaNegocio FacilidadesCapaNegocio = new NEGOCIO.FacilidadesCapaNegocio();
         public ActionResult Facilidades()
         {
-            ENTIDAD.TipoHabitacion tipo = new ENTIDAD.TipoHabitacion();
-            ViewData["listaTipoHabitaciones"] = habitacionCapaNegocio.listadoTipoHabitaciones();
-            return View(habitacionCapaNegocio.listadoTipoHabitaciones());
+            ENTIDAD.Facilidades tipo = new ENTIDAD.Facilidades();
+            //ViewData["listaTipoHabitaciones"] = habitacionCapaNegocio.listadoTipoHabitaciones();
+            return View(FacilidadesCapaNegocio.listadoFacilidades());
         }
         public ActionResult Llegar()
         {

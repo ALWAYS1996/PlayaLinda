@@ -42,7 +42,8 @@ namespace DATOS
                         tipoHabitacion.codigoTipoHabitacion = int.Parse(ds.Tables[0].Rows[i][0].ToString());
                         tipoHabitacion.nombre = (ds.Tables[0].Rows[i][1].ToString());
                         tipoHabitacion.precio = int.Parse(ds.Tables[0].Rows[i][2].ToString());
-                        tipoHabitacion.descripcion = (ds.Tables[0].Rows[i][3].ToString());
+                        tipoHabitacion.urlImg =(ds.Tables[0].Rows[i][3].ToString());
+                        tipoHabitacion.descripcion = (ds.Tables[0].Rows[i][4].ToString());
 
                         listarTipoHabitacion.Add(tipoHabitacion);
                     }
