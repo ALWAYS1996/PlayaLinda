@@ -4244,23 +4244,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\gmg55\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Jahanel\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gmg55\\Desktop\\personal\\UCR\\1Semestre2020\\PlayaLinda\\NEGOCIO\\NEGOCIO.csproj",
+      "projectUniqueName": "C:\\Users\\Jahanel\\Documents\\Git\\PlayaLinda\\NEGOCIO\\NEGOCIO.csproj",
       "projectName": "NEGOCIO",
-      "projectPath": "C:\\Users\\gmg55\\Desktop\\personal\\UCR\\1Semestre2020\\PlayaLinda\\NEGOCIO\\NEGOCIO.csproj",
-      "packagesPath": "C:\\Users\\gmg55\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gmg55\\Desktop\\personal\\UCR\\1Semestre2020\\PlayaLinda\\NEGOCIO\\obj\\",
+      "projectPath": "C:\\Users\\Jahanel\\Documents\\Git\\PlayaLinda\\NEGOCIO\\NEGOCIO.csproj",
+      "packagesPath": "C:\\Users\\Jahanel\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jahanel\\Documents\\Git\\PlayaLinda\\NEGOCIO\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\gmg55\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jahanel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4273,11 +4269,11 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\gmg55\\Desktop\\personal\\UCR\\1Semestre2020\\PlayaLinda\\DATOS\\DATOS.csproj": {
-              "projectPath": "C:\\Users\\gmg55\\Desktop\\personal\\UCR\\1Semestre2020\\PlayaLinda\\DATOS\\DATOS.csproj"
+            "C:\\Users\\Jahanel\\Documents\\Git\\PlayaLinda\\DATOS\\DATOS.csproj": {
+              "projectPath": "C:\\Users\\Jahanel\\Documents\\Git\\PlayaLinda\\DATOS\\DATOS.csproj"
             },
-            "C:\\Users\\gmg55\\Desktop\\personal\\UCR\\1Semestre2020\\PlayaLinda\\ENTIDAD\\ENTIDAD.csproj": {
-              "projectPath": "C:\\Users\\gmg55\\Desktop\\personal\\UCR\\1Semestre2020\\PlayaLinda\\ENTIDAD\\ENTIDAD.csproj"
+            "C:\\Users\\Jahanel\\Documents\\Git\\PlayaLinda\\ENTIDAD\\ENTIDAD.csproj": {
+              "projectPath": "C:\\Users\\Jahanel\\Documents\\Git\\PlayaLinda\\ENTIDAD\\ENTIDAD.csproj"
             }
           }
         }
@@ -4335,10 +4331,16 @@
           }
         },
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

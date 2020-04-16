@@ -19,7 +19,10 @@ namespace PlayaLinda.Controllers
             ViewData["listadoVistazoHotel"] = capaNegocios.listadoTexto(infoTexto);
             return View(capaNegocios.listadoGaleriaImagenes(infoTexto));
         }
-        public ActionResult Contacto(){
+        public ActionResult Contacto()
+        {
+            ENTIDAD.InformacionTexto infoTexto = new ENTIDAD.InformacionTexto(4);
+            ViewData["listadoContactenos"] = capaNegocios.listadoTexto(infoTexto);
             return View();
         }
         [HttpPost]
