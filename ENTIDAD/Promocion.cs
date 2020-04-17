@@ -23,10 +23,11 @@ namespace ENTIDAD
 
         [DisplayFormat(NullDisplayText = "Sin Respuesta")]
         [Display(Name = "Información")]
-        public DateTime informacion { get; set; }
+        public string informacion { get; set; }
 
-
-
+        [DisplayFormat(NullDisplayText = "Sin Respuesta")]
+        [Display(Name = "imgUrl")]
+        public string imgUrl { get; set; }
 
         [DisplayFormat(NullDisplayText = "Sin Respuesta")]
         [Display(Name = "Precio")]
@@ -36,7 +37,7 @@ namespace ENTIDAD
         {
         }
 
-        public Promocion(int codigoPromocion, DateTime fechaInicio, DateTime fechaFinal, DateTime informacion, int precio)
+        public Promocion(int codigoPromocion, DateTime fechaInicio, DateTime fechaFinal, string informacion, int precio)
         {
             this.codigoPromocion = codigoPromocion;
             this.fechaInicio = fechaInicio;
