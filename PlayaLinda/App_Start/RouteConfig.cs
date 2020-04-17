@@ -12,7 +12,7 @@ namespace PlayaLinda
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Basic", action = "Inicio", id = UrlParameter.Optional }
+                defaults: new { controller = "InformacionTexto", action = "Inicio", id = UrlParameter.Optional }
             );
         }
     }

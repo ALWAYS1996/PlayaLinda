@@ -3,6 +3,27 @@
     background: #fafafa;
 
 }
+a {
+    text-decoration: dashed;
+}
+
+
+
+    a:visited {
+        color: #6d7fcc;
+        background-color: #6d7fcc;
+    }
+
+    a:hover {
+        color: #6d7fcc;
+        background-color: #6d7fcc;
+    }
+
+    a:active {
+        color: #6d7fcc;
+    }
+
+
 
 p {
     font-family: 'Poppins', sans-serif;

@@ -268,7 +268,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BasicController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\HabitacionesController.cs" />
+    <Compile Include="Controllers\InformacionTextoController.cs" />
+    <Compile Include="Controllers\ItinerarioController.cs" />
+    <Compile Include="Controllers\MapaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -280,9 +284,11 @@
     <Content Include="Content\css\Estilos.css" />
     <Content Include="Content\css\estiloVistazoH.css" />
     <Content Include="Content\img\espalda.png" />
+    <Content Include="Content\img\isla.png" />
     <Content Include="Content\img\mapa.svg" />
     <Content Include="Content\img\ojo.svg" />
     <Content Include="Content\img\proximo.png" />
+    <Content Include="Content\img\calendario.svg" />
     <Content Include="Content\js\JavaScript.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -310,11 +316,12 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Basic\Inicio.cshtml" />
+    <Content Include="Views\InformacionTexto\Inicio.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Cliente\" />
     <Folder Include="Views\Habitaciones\" />
   </ItemGroup>
   <ItemGroup>
@@ -323,14 +330,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="packages.config" />
-    <Content Include="Views\Basic\Nosotros.cshtml" />
+    <Content Include="Views\InformacionTexto\Nosotros.cshtml" />
     <Content Include="Views\Basic\Facilidades.cshtml" />
-    <Content Include="Views\Basic\Contacto.cshtml" />
-    <Content Include="Views\Basic\Llegar.cshtml" />
+    <Content Include="Views\InformacionTexto\Contacto.cshtml" />
+    <Content Include="Views\Mapa\Llegar.cshtml" />
     <Content Include="Views\Basic\Tarifas.cshtml" />
     <Content Include="Views\Basic\Reservar.cshtml" />
     <Content Include="Views\Basic\View.cshtml" />
-    <Content Include="Views\Basic\Mapa.cshtml" />
+    <Content Include="Views\Mapa\Mapa.cshtml" />
+    <Content Include="Views\Itinerario\Itinerario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ENTIDAD\ENTIDAD.csproj">

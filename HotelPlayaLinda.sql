@@ -3,7 +3,7 @@
 CREATE  DATABASE DDJK;
 USE DDJK
 GO
-
+PA_ListarTipoHabitacion
 --------------------------
 -- Definicion de tablas --
 --------------------------
@@ -18,6 +18,28 @@ ALTER TABLE Mapa ADD latitudDestino varchar(max);
 ALTER TABLE Mapa ADD longitudDestino varchar(max);
 ALTER TABLE Mapa ADD CONSTRAINT PK_Mapa PRIMARY KEY (idMapa);
 ALTER TABLE Mapa DROP COLUMN dummy;
+
+
+CREATE TABLE Itinerario(dummy int);
+ALTER TABLE Itinerario ADD idItinerario int identity(1,1);
+ALTER TABLE Itinerario ADD dia varchar(max);
+ALTER TABLE Itinerario ADD desayuno varchar(max);
+ALTER TABLE Itinerario ADD  imagenDesayuno varchar(max);
+ALTER TABLE Itinerario ADD almuerzo varchar(max);
+ALTER TABLE Itinerario ADD  imagenAlmuerzo varchar(max);
+ALTER TABLE Itinerario ADD cena varchar(max);
+ALTER TABLE Itinerario ADD  imagenCena varchar(max);
+ALTER TABLE Itinerario ADD CONSTRAINT PK_Itinerario PRIMARY KEY (idItinerario);
+ALTER TABLE Itinerario DROP COLUMN dummy;
+
+select * from Itinerario
+INSERT INTO Itinerario VALUES('Lunes','Omelet, Jugo de Naranga','\Content\img\desayunoAmericano.jpg','Huevos, Aguacare,Pollo,Remolacha y Vaso con Agua','\Content\img\almuerzo.jpg','Pollo con papas y Vaso con Agua','\Content\img\cena.jpg')
+
+CREATE PROCEDURE PA_ListarItinerario
+AS SET NOCOUNT ON;
+SELECT dia,desayuno,imagenDesayuno,almuerzo,imagenAlmuerzo,cena,imagenCena FROM Itinerario
+GO
+
 
 DROP TABLE IF EXISTS Cliente;
 CREATE TABLE Cliente(dummy int);
@@ -437,3 +459,5 @@ AS SET NOCOUNT ON;
 Select latitudOrigen,longitudOrigen from Mapa
 GO
 -------------------------------------------------------------------------------------------------------------------------
+SELECT * FROM informacionTexto
+exec PA_ListarGaleriaTexto 4
