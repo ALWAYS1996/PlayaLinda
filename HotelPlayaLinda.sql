@@ -3,7 +3,6 @@
 CREATE  DATABASE DDJK;
 USE DDJK
 GO
-PA_ListarTipoHabitacion
 --------------------------
 -- Definicion de tablas --
 --------------------------
@@ -32,13 +31,7 @@ ALTER TABLE Itinerario ADD  imagenCena varchar(max);
 ALTER TABLE Itinerario ADD CONSTRAINT PK_Itinerario PRIMARY KEY (idItinerario);
 ALTER TABLE Itinerario DROP COLUMN dummy;
 
-select * from Itinerario
-INSERT INTO Itinerario VALUES('Lunes','Omelet, Jugo de Naranga','\Content\img\desayunoAmericano.jpg','Huevos, Aguacare,Pollo,Remolacha y Vaso con Agua','\Content\img\almuerzo.jpg','Pollo con papas y Vaso con Agua','\Content\img\cena.jpg')
 
-CREATE PROCEDURE PA_ListarItinerario
-AS SET NOCOUNT ON;
-SELECT dia,desayuno,imagenDesayuno,almuerzo,imagenAlmuerzo,cena,imagenCena FROM Itinerario
-GO
 
 
 DROP TABLE IF EXISTS Cliente;
@@ -459,5 +452,7 @@ AS SET NOCOUNT ON;
 Select latitudOrigen,longitudOrigen from Mapa
 GO
 -------------------------------------------------------------------------------------------------------------------------
-SELECT * FROM informacionTexto
-exec PA_ListarGaleriaTexto 4
+CREATE PROCEDURE PA_ListarItinerario
+AS SET NOCOUNT ON;
+SELECT dia,desayuno,imagenDesayuno,almuerzo,imagenAlmuerzo,cena,imagenCena FROM Itinerario
+GO
