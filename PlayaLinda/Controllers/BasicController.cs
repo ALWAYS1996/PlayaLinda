@@ -12,22 +12,14 @@ namespace PlayaLinda.Controllers
     public class BasicController : Controller
     {
 
-
-       
-     
-       
         NEGOCIO.FacilidadesCapaNegocio FacilidadesCapaNegocio = new NEGOCIO.FacilidadesCapaNegocio();
+        NEGOCIO.HabitacionCapaNegocio HabitacionesCapaNegocio = new NEGOCIO.HabitacionCapaNegocio();
+
         public ActionResult Facilidades()
         {
             ENTIDAD.Facilidades tipo = new ENTIDAD.Facilidades();
             //ViewData["listaTipoHabitaciones"] = habitacionCapaNegocio.listadoTipoHabitaciones();
             return View(FacilidadesCapaNegocio.listadoFacilidades());
-        }
-       
-
-        public ActionResult Tarifas()
-        {
-            return View();
         }
 
         public ActionResult Reservar()
@@ -35,5 +27,9 @@ namespace PlayaLinda.Controllers
             return View();
         }
 
+        public ActionResult Tarifas()
+        {
+            return View(HabitacionesCapaNegocio.listadoTipoHabitaciones());
+        }
     }
 }

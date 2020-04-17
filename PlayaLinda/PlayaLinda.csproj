@@ -334,12 +334,11 @@
     <Content Include="Views\Basic\Facilidades.cshtml" />
     <Content Include="Views\InformacionTexto\Contacto.cshtml" />
     <Content Include="Views\Mapa\Llegar.cshtml" />
-    <Content Include="Views\Basic\Tarifas.cshtml" />
     <Content Include="Views\Basic\Reservar.cshtml" />
     <Content Include="Views\Basic\View.cshtml" />
     <Content Include="Views\Mapa\Mapa.cshtml" />
     <Content Include="Views\Itinerario\Itinerario.cshtml" />
-    <Content Include="Views\Mapa\DanielBorrelaXD.cshtml" />
+    <Content Include="Views\Basic\Tarifas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ENTIDAD\ENTIDAD.csproj">
