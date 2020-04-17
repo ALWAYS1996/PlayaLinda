@@ -339,6 +339,7 @@
     <Content Include="Views\Basic\View.cshtml" />
     <Content Include="Views\Mapa\Mapa.cshtml" />
     <Content Include="Views\Itinerario\Itinerario.cshtml" />
+    <Content Include="Views\Mapa\DanielBorrelaXD.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ENTIDAD\ENTIDAD.csproj">
