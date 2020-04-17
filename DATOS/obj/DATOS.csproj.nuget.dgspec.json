@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Usuarios\\Usuario\\source\\repos\\PlayaLinda\\DATOS\\DATOS.csproj": {}
+    "C:\\Users\\Jahanel\\Documents\\Git\\PlayaLinda\\DATOS\\DATOS.csproj": {}
   },
   "projects": {
-    "D:\\Usuarios\\Usuario\\source\\repos\\PlayaLinda\\DATOS\\DATOS.csproj": {
+    "C:\\Users\\Jahanel\\Documents\\Git\\PlayaLinda\\DATOS\\DATOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Usuarios\\Usuario\\source\\repos\\PlayaLinda\\DATOS\\DATOS.csproj",
+        "projectUniqueName": "C:\\Users\\Jahanel\\Documents\\Git\\PlayaLinda\\DATOS\\DATOS.csproj",
         "projectName": "DATOS",
-        "projectPath": "D:\\Usuarios\\Usuario\\source\\repos\\PlayaLinda\\DATOS\\DATOS.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "D:\\Usuarios\\Usuario\\source\\repos\\PlayaLinda\\DATOS\\obj\\",
+        "projectPath": "C:\\Users\\Jahanel\\Documents\\Git\\PlayaLinda\\DATOS\\DATOS.csproj",
+        "packagesPath": "C:\\Users\\Jahanel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jahanel\\Documents\\Git\\PlayaLinda\\DATOS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jahanel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -27,8 +27,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "D:\\Usuarios\\Usuario\\source\\repos\\PlayaLinda\\ENTIDAD\\ENTIDAD.csproj": {
-                "projectPath": "D:\\Usuarios\\Usuario\\source\\repos\\PlayaLinda\\ENTIDAD\\ENTIDAD.csproj"
+              "C:\\Users\\Jahanel\\Documents\\Git\\PlayaLinda\\ENTIDAD\\ENTIDAD.csproj": {
+                "projectPath": "C:\\Users\\Jahanel\\Documents\\Git\\PlayaLinda\\ENTIDAD\\ENTIDAD.csproj"
               }
             }
           }
@@ -91,21 +91,21 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Usuarios\\Usuario\\source\\repos\\PlayaLinda\\ENTIDAD\\ENTIDAD.csproj": {
+    "C:\\Users\\Jahanel\\Documents\\Git\\PlayaLinda\\ENTIDAD\\ENTIDAD.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Usuarios\\Usuario\\source\\repos\\PlayaLinda\\ENTIDAD\\ENTIDAD.csproj",
+        "projectUniqueName": "C:\\Users\\Jahanel\\Documents\\Git\\PlayaLinda\\ENTIDAD\\ENTIDAD.csproj",
         "projectName": "ENTIDAD",
-        "projectPath": "D:\\Usuarios\\Usuario\\source\\repos\\PlayaLinda\\ENTIDAD\\ENTIDAD.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "D:\\Usuarios\\Usuario\\source\\repos\\PlayaLinda\\ENTIDAD\\obj\\",
+        "projectPath": "C:\\Users\\Jahanel\\Documents\\Git\\PlayaLinda\\ENTIDAD\\ENTIDAD.csproj",
+        "packagesPath": "C:\\Users\\Jahanel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jahanel\\Documents\\Git\\PlayaLinda\\ENTIDAD\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jahanel\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -174,7 +174,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

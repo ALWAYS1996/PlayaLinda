@@ -1,7 +1,22 @@
-﻿
-@{
+﻿@model IEnumerable<ENTIDAD.InformacionTexto>
+@{ var listadoTexto = (IEnumerable<ENTIDAD.InformacionTexto>)ViewData["listadoContactenos"];
     ViewBag.Title = "Contacto";
 }
 
-<h2>Contacto</h2>
+<body class="scroll">
+    <div class="container ">
+        <div class="row">
+            <div class="col-12">
+                @foreach (var dato in listadoTexto)
+                {
+                    <center>  <h3 class="titulo" style="color:black; background-color:cornflowerblue"> @Html.DisplayFor(modelItem => dato.titulo)</h3></center>
+                    <br>
+                    <center>  <div style="color:black"> @Html.DisplayFor(modelItem => dato.contenido) </div></center>
+
+                }
+            </div>
+        </div>
+    </div>
+</body>
+
 
