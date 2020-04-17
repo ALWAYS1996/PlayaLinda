@@ -358,3 +358,5 @@ MigrationBackup/
 
 *.assets.cache
 *.FileListAbsolute.txt
+*.suo
+*.csprojAssemblyReference.cache
