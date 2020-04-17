@@ -12,12 +12,7 @@ namespace PlayaLinda.Controllers
 
         NEGOCIO.PromocionCapaNegocio promocionCapaNegocio = new NEGOCIO.PromocionCapaNegocio();
         NEGOCIO.InformacionTextoCapaNegocio capaNegocios = new NEGOCIO.InformacionTextoCapaNegocio();
-        //public ActionResult Inicio()
-        //{
-        //    ENTIDAD.InformacionTexto infoTexto = new ENTIDAD.InformacionTexto(2);
-        //    ViewData["listadoVistazoHotel"] = capaNegocios.listadoTexto(infoTexto);
-        //    return View(capaNegocios.listadoImagenes(infoTexto));
-        //}
+     
         public ActionResult Inicio()
         {
             ENTIDAD.InformacionTexto infoTexto = new ENTIDAD.InformacionTexto(2);
