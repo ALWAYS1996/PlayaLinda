@@ -14,17 +14,25 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-sm">
-                <div class="col-12">
+
+            <div class="col-md-3"></div>
+            <center>
+                <div class="col-md-7">
+
                     @foreach (var dato in listadoTexto)
                     {
-                        <center>  <h3 class="titulo" style="color:black; background-color:cornflowerblue"> @Html.DisplayFor(modelItem => dato.titulo)</h3></center>
+                        <hr style="color: #47748b; ">
+                        <center style="background-color:bisque"><strong style="background-color:white">  @Html.DisplayFor(modelItem => dato.titulo) </strong></center>
+                        <hr style="color: #47748b">
                         <br>
-                        <center>  <div style="color:black"> @Html.DisplayFor(modelItem => dato.contenido) </div></center>
 
+                        <div style="text-align: justify;"> @Html.DisplayFor(modelItem => dato.contenido) </div>
+                        <br>
                     }
+
                 </div>
-                <br>   <br>
+            </center>
+            <div class="col-md-2">
                 <div class="auto">
                     <button type="button" id="search" name="search" class="autoclick" onclick="get_my_location()"><img src="~/Content/img/ojo.svg" width="50" height="50" alt="x" />  </button>
 
@@ -35,9 +43,17 @@
 
                     }
                 </div>
-                <div class="map" id="map" style="width:100%;height:400px;"> </div>
+
             </div>
+            <br>
+
+           <div class="map" id="map" style="width:70%;height:350px;"> </div> 
+
+
         </div>
+        <br>
+        <br>
+        <br>
     </div>
 
     <script type="text/javascript">

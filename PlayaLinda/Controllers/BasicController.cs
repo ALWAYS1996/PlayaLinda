@@ -15,7 +15,7 @@ namespace PlayaLinda.Controllers
 
         NEGOCIO.FacilidadesCapaNegocio FacilidadesCapaNegocio = new NEGOCIO.FacilidadesCapaNegocio();
         NEGOCIO.HabitacionCapaNegocio HabitacionesCapaNegocio = new NEGOCIO.HabitacionCapaNegocio();
-        NEGOCIO.ReservacionCapaNegocios reservacionCapaNegocios = new NEGOCIO.ReservacionCapaNegocios();
+     
 
         public ActionResult Facilidades()
         {
@@ -24,29 +24,7 @@ namespace PlayaLinda.Controllers
             return View(FacilidadesCapaNegocio.listadoFacilidades());
         }
 
-        public ActionResult Reservar()
-        {
-            return View(HabitacionesCapaNegocio.listadoTipoHabitaciones());
-        }
-        public ActionResult CrearReservacion(Reservacion reservacion) {
-            string mensaje;
-            if (this.reservacionCapaNegocios.registrarReservacion(reservacion) == 0)
-            {
-                //mensaje de error
-                mensaje = "<script language='javascript' type='text/javascript'>" +
-                     "alert('No agregado');window.location.href=" +
-                     "'Reservar';</script>";
-            }
-            else
-            {
-                mensaje = "<script language='javascript' type='text/javascript'>" +
-                    "alert('agregado');window.location.href=" +
-                    "'Reservar';</script>";
-            }
-            //reservacionCapaNegocios.registrarReservacion(reservacion);
-            
-            return Content(mensaje);
-        }
+       
 
         public ActionResult Tarifas()
         {

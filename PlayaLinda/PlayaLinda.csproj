@@ -273,6 +273,7 @@
     <Compile Include="Controllers\InformacionTextoController.cs" />
     <Compile Include="Controllers\ItinerarioController.cs" />
     <Compile Include="Controllers\MapaController.cs" />
+    <Compile Include="Controllers\ReservaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -334,7 +335,7 @@
     <Content Include="Views\Basic\Facilidades.cshtml" />
     <Content Include="Views\InformacionTexto\Contacto.cshtml" />
     <Content Include="Views\Mapa\Llegar.cshtml" />
-    <Content Include="Views\Basic\Reservar.cshtml" />
+    <Content Include="Views\Reserva\Reservar.cshtml" />
     <Content Include="Views\Basic\View.cshtml" />
     <Content Include="Views\Mapa\Mapa.cshtml" />
     <Content Include="Views\Itinerario\Itinerario.cshtml" />

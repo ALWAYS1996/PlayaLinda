@@ -7,7 +7,6 @@ GO
 -- Definicion de tablas --
 --------------------------
 
-
 DROP TABLE IF EXISTS Mapa;
 CREATE TABLE Mapa(dummy int);
 ALTER TABLE Mapa ADD idMapa int identity(1,1);

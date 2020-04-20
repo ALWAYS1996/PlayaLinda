@@ -25,7 +25,7 @@ function start_map() {
 
 function get_my_location() {
     //param ruta destino
-    draw_rute_map(8.820193, -82.973514);
+    draw_rute_map(9.975507, -84.843421);
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
             //  $('#my_lat').val(position.coords.latitude);
