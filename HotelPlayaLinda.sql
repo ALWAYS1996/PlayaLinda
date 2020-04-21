@@ -7,6 +7,8 @@ GO
 -- Definicion de tablas --
 --------------------------
 
+select * from Reservacion
+
 DROP TABLE IF EXISTS Mapa;
 CREATE TABLE Mapa(dummy int);
 ALTER TABLE Mapa ADD idMapa int identity(1,1);
@@ -123,8 +125,11 @@ ALTER TABLE informacionTexto ADD CONSTRAINT PK_informacionTexto PRIMARY KEY(idIn
 -- FIN Definicion de tablas --
 --------------------------
 
+select * from Reservacion
+select * from Cliente
+select * from TipoHabitacion
 
-
+select * from Habitacion
 
 --------------------------------
 -- Procedimientos Almacenados --
@@ -455,3 +460,20 @@ CREATE PROCEDURE PA_ListarItinerario
 AS SET NOCOUNT ON;
 SELECT dia,desayuno,imagenDesayuno,almuerzo,imagenAlmuerzo,cena,imagenCena FROM Itinerario
 GO
+-------------------------------------------------------------------------------------------------------------------------
+ALTER PROCEDURE PA_SugerenciaReservacion(@fechaLlegada date,@fechaSalida date,@tipoHabitacion int)
+AS SET NOCOUNT ON;
+SELECT fechaLlegada, fechaSalida from Reservacion where MONTH(fechaLlegada)=MONTH(@fechaLlegada) and
+MONTH(fechaSalida)=MONTH(@fechaSalida)   and idTipoHabitacion=@tipoHabitacion
+GO
+
+-------------------------------------------------------------------------------------------------------------------------
+ALTER PROCEDURE PA_VerificarReservacion(@fechaLlegada date,@fechaSalida date, @tipoHabitacion int)
+AS SET NOCOUNT ON;
+SELECT  count(*) as rangoFechas from Reservacion where ((fechaLlegada between  @fechaLlegada and @fechaSalida)  and
+   (fechaSalida  between @fechaLlegada  and @fechaSalida))
+   and idTipoHabitacion=@tipoHabitacion
+GO
+------------------------------------------------------------------------------------------------------------------------
+exec PA_VerificarReservacion '2020-04-14','2020-04-15',3
+exec PA_SugerenciaReservacion '2020-04-20','2020-04-25',3

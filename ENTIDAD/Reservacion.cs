@@ -27,6 +27,9 @@ namespace ENTIDAD
         [Display(Name = "Fecha Llegada")]
 
         public DateTime fechaLlegada { get; set; }
+        public string fechaL { get; set; }
+        public string fechaS { get; set; }
+
 
 
         [DisplayFormat(NullDisplayText = "Sin Respuesta")]

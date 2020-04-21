@@ -33,7 +33,6 @@ C:\Users\gmg55\Desktop\personal\UCR\1Semestre2020\PlayaLinda\ENTIDAD\obj\Debug\n
 D:\Usuarios\Usuario\source\repos\PlayaLinda\ENTIDAD\bin\Debug\netstandard2.0\ENTIDAD.deps.json
 D:\Usuarios\Usuario\source\repos\PlayaLinda\ENTIDAD\bin\Debug\netstandard2.0\ENTIDAD.dll
 D:\Usuarios\Usuario\source\repos\PlayaLinda\ENTIDAD\bin\Debug\netstandard2.0\ENTIDAD.pdb
-D:\Usuarios\Usuario\source\repos\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.csprojAssemblyReference.cache
 D:\Usuarios\Usuario\source\repos\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.csproj.CoreCompileInputs.cache
 D:\Usuarios\Usuario\source\repos\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.AssemblyInfoInputs.cache
 D:\Usuarios\Usuario\source\repos\PlayaLinda\ENTIDAD\obj\Debug\netstandard2.0\ENTIDAD.AssemblyInfo.cs

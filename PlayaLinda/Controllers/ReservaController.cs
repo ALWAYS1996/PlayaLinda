@@ -22,8 +22,19 @@ namespace PlayaLinda.Controllers
         {
             return View(HabitacionesCapaNegocio.listadoTipoHabitaciones());
         }
-        public ActionResult CrearReservacion(Reservacion reservacion)
-        {
+      
+        public ActionResult Estado(Reservacion reservacion){
+
+            if (reservacionCapaNegocios.verificarReservacion(reservacion)>0) {
+                ViewBag.mensaje = "Lo sentimos, ese rango de Habitaciones  están Ocupadas en ese rango de fechas.Pero tenemos estas disponibles:";
+                return View();
+            } else {
+                ViewBag.mensaje = "Habitación disponible para ser reservada";
+                return View();
+            };
+            
+        }
+        public ActionResult CrearReservacion(Reservacion reservacion)  {
             string mensaje;
             if (this.reservacionCapaNegocios.registrarReservacion(reservacion) == 0)
             {

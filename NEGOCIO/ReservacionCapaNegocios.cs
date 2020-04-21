@@ -10,5 +10,13 @@ namespace NEGOCIO
         DATOS.ReservacionCapaDatos reservacionCapaDatos= new DATOS.ReservacionCapaDatos();
         public int registrarReservacion(Reservacion reservacion)
         { return reservacionCapaDatos.registrarReservacion(reservacion); }
+
+        public int verificarReservacion (Reservacion reservacion)
+        { return reservacionCapaDatos.verificarReservacion(reservacion); }
+
+ 
+   public IEnumerable<ENTIDAD.Reservacion> sugerirReservacion(ENTIDAD.Reservacion reserva)
+        { return reservacionCapaDatos.sugerirReservacion(reserva); }
+
     }
 }
