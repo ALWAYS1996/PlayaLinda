@@ -10,8 +10,9 @@ namespace PlayaLinda.Controllers
     public class ReservaController : Controller
     {
         // GET: Reserva
-        public ActionResult Index()
-        {
+        public ActionResult ReservaLinea(Reservacion reservacion) {
+
+            ViewBag.mensaje = "Habitación disponible para ser reservada"+ reservacion.codigoHabitacion;
             return View();
         }
         NEGOCIO.ReservacionCapaNegocios reservacionCapaNegocios = new NEGOCIO.ReservacionCapaNegocios();
@@ -25,13 +26,20 @@ namespace PlayaLinda.Controllers
       
         public ActionResult Estado(Reservacion reservacion){
 
-            if (reservacionCapaNegocios.verificarReservacion(reservacion)>0) {
+            if (reservacionCapaNegocios.verificarReservacion(reservacion) > 0)
+            {
                 ViewBag.mensaje = "Lo sentimos, ese rango de Habitaciones  están Ocupadas en ese rango de fechas.Pero tenemos estas disponibles:";
                 return View();
             } else {
+                ViewData["idHabitacion"] = reservacion.codigoHabitacion;
+                ViewData["fechaInicio"] = reservacion.fechaLlegada;
+                ViewData["fechaFin"] = reservacion.fechaSalida;
                 ViewBag.mensaje = "Habitación disponible para ser reservada";
-                return View();
-            };
+                return View("ReservaLinea");
+
+
+            }
+      
             
         }
         public ActionResult CrearReservacion(Reservacion reservacion)  {
