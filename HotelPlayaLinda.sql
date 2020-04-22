@@ -48,6 +48,10 @@ ALTER TABLE Cliente ADD correo varchar(50);
 ALTER TABLE Cliente ADD CONSTRAINT PK_Cliente PRIMARY KEY (idCliente);
 ALTER TABLE Cliente DROP COLUMN dummy;
 
+
+select * from  Habitacion
+
+select * from  Reservacion
 DROP TABLE IF EXISTS Habitacion;
 CREATE TABLE Habitacion(dummy int);
 ALTER TABLE Habitacion ADD idHabitacion tinyint IDENTITY(1,1);
@@ -470,10 +474,15 @@ GO
 -------------------------------------------------------------------------------------------------------------------------
 ALTER PROCEDURE PA_VerificarReservacion(@fechaLlegada date,@fechaSalida date, @tipoHabitacion int)
 AS SET NOCOUNT ON;
-SELECT  count(*) as rangoFechas from Reservacion where ((fechaLlegada between  @fechaLlegada and @fechaSalida)  and
-   (fechaSalida  between @fechaLlegada  and @fechaSalida))
-   and idTipoHabitacion=@tipoHabitacion
-GO
+SELECT 
+case when count(1) >1 then 1 else 0 end as rangoFechas
+from Reservacion
+where idTipoHabitacion =@tipoHabitacion and
+(select min(fechaLlegada) from Reservacion where idTipoHabitacion =@tipoHabitacion ) < @fechaSalida
+ AND (select max(fechaSalida) from Reservacion where idTipoHabitacion =@tipoHabitacion ) > @fechaLlegada
+ GO
 ------------------------------------------------------------------------------------------------------------------------
-exec PA_VerificarReservacion '2020-04-14','2020-04-15',3
-exec PA_SugerenciaReservacion '2020-04-20','2020-04-25',3
+exec PA_VerificarReservacion '2020-04-22','2020-04-24',3
+exec PA_SugerenciaReservacion '2020-04-22','2020-04-23',3
+
+select * from Reservacion
