@@ -80,17 +80,15 @@ namespace DATOS
 
 
         private List<ENTIDAD.Reservacion> sugerenciaReservacion = new List<ENTIDAD.Reservacion>();
-        public IEnumerable<ENTIDAD.Reservacion> sugerirReservacion(ENTIDAD.Reservacion reserva)
+        public IEnumerable<ENTIDAD.Reservacion> sugerirReservacion()
         {
             SqlCommand comando = new SqlCommand();
             try
             {
                 comando.Connection = conexion;
                 conexion.Open();
-                comando.CommandText = "exec PA_SugerenciaReservacion @fechaLlegada, @fechaSalida,@tipoHabitacion";
-                comando.Parameters.AddWithValue("@fechaLlegada", reserva.fechaL);
-                comando.Parameters.AddWithValue("@fechaSalida", reserva.fechaS);
-                comando.Parameters.AddWithValue("@tipoHabitacion", reserva.codigoHabitacion);
+                comando.CommandText = "exec PA_SugerenciaReservacion";
+            
                 SqlDataAdapter da = new SqlDataAdapter(comando);
                 DataSet ds = new DataSet();
                 da.Fill(ds);

@@ -23,11 +23,13 @@ namespace ENTIDAD
         public string codigoCliente { get; set; }
 
 
-        [DisplayFormat(NullDisplayText = "Sin Respuesta")]
         [Display(Name = "Fecha Llegada")]
-
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime fechaLlegada { get; set; }
+
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         public string fechaL { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         public string fechaS { get; set; }
 
 
