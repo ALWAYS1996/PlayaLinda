@@ -465,10 +465,11 @@ AS SET NOCOUNT ON;
 SELECT dia,desayuno,imagenDesayuno,almuerzo,imagenAlmuerzo,cena,imagenCena FROM Itinerario
 GO
 -------------------------------------------------------------------------------------------------------------------------
-ALTER PROCEDURE PA_SugerenciaReservacion(@fechaLlegada date,@fechaSalida date,@tipoHabitacion int)
+ALTER PROCEDURE PA_SugerenciaReservacion--@fechaLlegada date,@fechaSalida date,@tipoHabitacion int)
 AS SET NOCOUNT ON;
-SELECT fechaLlegada, fechaSalida from Reservacion where MONTH(fechaLlegada)=MONTH(@fechaLlegada) and
-MONTH(fechaSalida)=MONTH(@fechaSalida)   and idTipoHabitacion=@tipoHabitacion
+SELECT fechaLlegada,fechaSalida FROM Reservacion
+--SELECT fechaLlegada, fechaSalida from Reservacion where MONTH(fechaLlegada)=MONTH(@fechaLlegada) and
+--MONTH(fechaSalida)=MONTH(@fechaSalida)   and idTipoHabitacion=@tipoHabitacion
 GO
 
 -------------------------------------------------------------------------------------------------------------------------
