@@ -6,19 +6,21 @@ namespace ENTIDAD
     public class Reservacion
     {
         [DisplayFormat(NullDisplayText = "Sin Respuesta")]
-        [Display(Name = "Codigo Reserva")]
+        [Display(Name = "Id Reserva")]
         [Key]
         public int codigoReservacion { get; set; }
 
 
         [DisplayFormat(NullDisplayText = "Sin Respuesta")]
-        [Display(Name = "Codigo Habitacion")]
+        [Display(Name = "Id Habitacion")]
 
         public int codigoHabitacion { get; set; }
 
+        public string idHabitacionTemp { get; set; }
+
 
         [DisplayFormat(NullDisplayText = "Sin Respuesta")]
-        [Display(Name = "Codigo Cliente")]
+        [Display(Name = "Id Cliente")]
 
         public string codigoCliente { get; set; }
 
@@ -50,6 +52,13 @@ namespace ENTIDAD
             this.codigoCliente = codigoCliente;
             this.fechaLlegada = fechaLlegada;
             this.fechaSalida = fechaSalida;
+        }
+        public Reservacion(string idHabitacio, string fechaLlegada, string fechaSalida)
+        {
+            this.idHabitacionTemp = idHabitacio;
+            this.codigoHabitacion = codigoHabitacion;
+            this.fechaL = fechaLlegada;
+            this.fechaS = fechaSalida;
         }
     }
 }

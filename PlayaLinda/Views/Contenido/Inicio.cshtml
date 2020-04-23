@@ -1,5 +1,6 @@
-﻿@model IEnumerable<ENTIDAD.InformacionTexto>
-@{ var listadoVistazoHotel = (IEnumerable<ENTIDAD.InformacionTexto>)ViewData["listadoVistazoHotel"];
+﻿@model IEnumerable<ENTIDAD.Contenido>
+@{
+    var contenido = (IEnumerable<ENTIDAD.Contenido>)ViewData["contenidoVista"];
     var listadoPromociones = (IEnumerable<ENTIDAD.Promocion>)ViewData["listadoPromociones"];
     ViewBag.Title = "Inicio";
 }
@@ -57,7 +58,7 @@
         <div class="form-row">
             <div class="form-group col-md-12">
 
-                @foreach (var dato in listadoVistazoHotel)
+                @foreach (var dato in contenido)
                 {
                     <center>  <h3 style="color:black; background-color:cornflowerblue"> @Html.DisplayFor(modelItem => dato.titulo)</h3></center>
                     <center>  <div style="color:black"> @Html.DisplayFor(modelItem => dato.contenido) </div></center>

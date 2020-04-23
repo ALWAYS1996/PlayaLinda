@@ -40,9 +40,9 @@
 
 
 <!--------------------------- ------------------------------------>
-@model IEnumerable<ENTIDAD.InformacionTexto>
+@model IEnumerable<ENTIDAD.Imagen>
 
-@{ var listadoGaleriaTexto = (IEnumerable<ENTIDAD.InformacionTexto>)ViewData["listadoGaleriaTexto"];
+@{ var contenido = (IEnumerable<ENTIDAD.Contenido>)ViewData["contenidoVista"];
 
 }
 
@@ -58,7 +58,7 @@
             <center>
                 <div class="col-sm-10">
 
-                    @foreach (var dato in listadoGaleriaTexto)
+                    @foreach (var dato in contenido)
                     {
                         <hr style="color: #47748b">
                         <center style="background-color:bisque"><strong> @Html.DisplayFor(modelItem => dato.titulo)</strong> </center>
@@ -83,7 +83,7 @@
             <div class="contenedor-galeria">
                 @foreach (var item in Model)
                 {
-                    <img src="@Html.DisplayFor(modelItem=> item.rutaImagen)" class="galeria__img" />
+                    <img src="@Html.DisplayFor(modelItem=> item.imgPath)" class="galeria__img" />
                 }
             </div>
 

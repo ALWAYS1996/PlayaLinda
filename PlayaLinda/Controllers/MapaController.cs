@@ -11,12 +11,11 @@ namespace PlayaLinda.Controllers
         // GET: Mapa
 
         NEGOCIO.MapaCapaNegocio capaNegocios = new NEGOCIO.MapaCapaNegocio();
-        NEGOCIO.InformacionTextoCapaNegocio capaNegocios2 = new NEGOCIO.InformacionTextoCapaNegocio();
+        NEGOCIO.ContenidoCapaNegocio contenido = new NEGOCIO.ContenidoCapaNegocio();
         public ViewResult Mapa(string lat, string lng)
         {
             ENTIDAD.Mapa mapa = new ENTIDAD.Mapa(); mapa.latitudOrigen = lat; mapa.longitudOrigen = lng;
-            ENTIDAD.InformacionTexto infoTexto = new ENTIDAD.InformacionTexto(3);
-            ViewData["listadoTexto"] = capaNegocios2.listadoTexto(infoTexto);
+            ViewData["contenidoVista"] = contenido.listadoContenido(new ENTIDAD.Contenido(3));
             capaNegocios.modificarCoordenadasOrigen(mapa);
             return View(capaNegocios.listadoCoordenadasOrigen());
 

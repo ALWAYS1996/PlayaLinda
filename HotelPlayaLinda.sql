@@ -49,18 +49,16 @@ ALTER TABLE Cliente ADD CONSTRAINT PK_Cliente PRIMARY KEY (idCliente);
 ALTER TABLE Cliente DROP COLUMN dummy;
 
 
-select * from  Habitacion
+CREATE TABLE Contenido (idContenido smallint identity(1,1) PRIMARY KEY, titulo varchar(255), contenido varchar(max))
+CREATE TABLE Imagen (idImagen smallint identity(1,1) PRIMARY KEY, ruta varchar(max))
 
-select * from  Reservacion
 DROP TABLE IF EXISTS Habitacion;
 CREATE TABLE Habitacion(dummy int);
 ALTER TABLE Habitacion ADD idHabitacion tinyint IDENTITY(1,1);
 ALTER TABLE Habitacion ADD idTipoHabitacion int;
-ALTER TABLE Habitacion ADD idCliente int;
-ALTER TABLE Habitacion ADD vacante tinyint;
+ALTER TABLE Habitacion ADD estado tinyint;
 ALTER TABLE Habitacion ADD capacidad tinyint;
 ALTER TABLE Habitacion ADD CONSTRAINT PK_Habitacion PRIMARY KEY (idHabitacion);
-ALTER TABLE Habitacion ADD CONSTRAINT FK_idCliente FOREIGN KEY (idCliente ) REFERENCES Cliente(idCliente)  ON UPDATE CASCADE
 ALTER TABLE Habitacion ADD CONSTRAINT FK_idTipoHabitacion FOREIGN KEY (idTipoHabitacion ) REFERENCES TipoHabitacion(idTipoHabitacion)  ON UPDATE CASCADE
 ALTER TABLE Habitacion DROP COLUMN dummy;
 
@@ -113,27 +111,9 @@ ALTER TABLE Publicidad DROP COLUMN dummy;
 ALTER TABLE Publicidad ADD CONSTRAINT PK_Publicidad PRIMARY KEY(idPublicidad);
 
 
-
-DROP TABLE IF EXISTS informacionTexto;
-CREATE TABLE informacionTexto(dummy int);
-ALTER TABLE informacionTexto ADD idInformacionTexto int IDENTITY(1,1);
-ALTER TABLE informacionTexto ADD rutaImagen varchar(255) NULL ;
-ALTER TABLE informacionTexto ADD contenido varchar(max) NULL;
-ALTER TABLE informacionTexto ADD titulo varchar(255) NULL;
-ALTER TABLE informacionTexto ADD tipoInformacion int NOT NULL;
-ALTER TABLE informacionTexto DROP COLUMN dummy;
-ALTER TABLE informacionTexto ADD CONSTRAINT PK_informacionTexto PRIMARY KEY(idInformacionTexto);
-
-
 --------------------------
 -- FIN Definicion de tablas --
 --------------------------
-
-select * from Reservacion
-select * from Cliente
-select * from TipoHabitacion
-
-select * from Habitacion
 
 --------------------------------
 -- Procedimientos Almacenados --
@@ -197,13 +177,12 @@ ALTER PROCEDURE PA_ModificarHabitacion(
 @idHabitacion INT,
 @idTipoHabitacion  INT,
 @idCliente INT,
-@vacante   nvarchar(50),
+@estado   nvarchar(50),
 @capacidad   tinyint
 )
 AS SET NOCOUNT ON;
 UPDATE Habitacion  set idTipoHabitacion=@idTipoHabitacion,
-vacante=@vacante,
-idCliente=@idCliente,
+estado=@estado,
 capacidad=@capacidad
   WHERE idHabitacion=@idHabitacion  
 GO
@@ -388,63 +367,11 @@ AS SET NOCOUNT ON;
 Select idPublicidad,rutaImagen,link From Publicidad 
 GO
 -------------------------------------------------------------------------------------------------------------------------
-ALTER PROCEDURE PA_informacionTexto(
-@rutaImagen varchar(255) NULL,
-@contenido varchar(255),
-@titulo varchar(255),
-@tipoInformacion int)
+CREATE PROCEDURE PA_ModificarContenido( @contenido varchar(max),@titulo varchar(40), @idContenido int)
 AS SET NOCOUNT ON;
-INSERT INTO informacionTexto (rutaImagen,contenido,titulo,tipoInformacion)
-VALUES(@rutaImagen,@contenido,@titulo,@tipoInformacion)
+update Contenido set contenido=@contenido,titulo=@titulo WHERE idContenido=@idContenido   
 GO
--------------------------------------------------------------------------------------------------------------------------
-ALTER PROCEDURE PA_InformacionTexto (
-@idInformacionTexto int,
-@rutaImagen varchar(255) NULL,
-@contenido varchar(255),
-@titulo varchar(255))
-AS SET NOCOUNT ON;
-UPDATE informacionTexto set
-rutaImagen=@rutaImagen,contenido=@contenido, titulo=@titulo WHERE idInformacionTexto=@idInformacionTexto 
-GO	
--------------------------------------------------------------------------------------------------------------------------
-ALTER PROCEDURE PA_EliminarInformacionTexto(
-@idInformacionTexto int ,@tipoInformacion int)
-AS SET NOCOUNT ON;
-Delete From informacionTexto WHERE idInformacionTexto=@idInformacionTexto  and tipoInformacion=@tipoInformacion
-GO
--------------------------------------------------------------------------------------------------------------------------
-ALTER PROCEDURE PA_ListarInformacionTexto(@tipoInformacion int)
-AS SET NOCOUNT ON;
-Select idInformacionTexto,rutaImagen,contenido,titulo  From informacionTexto WHERE tipoInformacion=@tipoInformacion
-GO
--------------------------------------------------------------------------------------------------------------------------
-ALTER PROCEDURE PA_RegistrarGaleriaImagen(@rutaImagen varchar(255),
-@tipoInformacion int)
-AS SET NOCOUNT ON;
-insert into informacionTexto(rutaImagen,tipoInformacion) VALUES(@rutaImagen,@tipoInformacion)
-GO
--------------------------------------------------------------------------------------------------------------------------
-ALTER PROCEDURE PA_ListarGaleriaImagen(@tipoInformacion int)
-AS SET NOCOUNT ON;
-Select rutaImagen from informacionTexto where tipoInformacion=@tipoInformacion and rutaImagen IS NOT NULL
-GO
--------------------------------------------------------------------------------------------------------------------------
-CREATE  PROCEDURE PA_ListarGaleriaTexto(@tipoInformacion int)
-AS SET NOCOUNT ON;
-Select titulo,contenido from informacionTexto where tipoInformacion=@tipoInformacion  and titulo IS NOT NULL AND contenido IS NOT NULL
-GO
--------------------------------------------------------------------------------------------------------------------------
-CREATE PROCEDURE PA_ModificarGaleriaTexto( @contenido varchar(max),@titulo varchar(40), @tipoInformacion int)
-AS SET NOCOUNT ON;
-update informacionTexto set contenido=@contenido,titulo=@titulo WHERE tipoInformacion=@tipoInformacion   and rutaImagen IS NULL 
-GO
--------------------------------------------------------------------------------------------------------------------------
-CREATE PROCEDURE PA_RegistrarGaleriaTexto( @contenido varchar(max),@titulo varchar(40), @tipoInformacion int)
-AS SET NOCOUNT ON;
-insert into informacionTexto(contenido,titulo,tipoInformacion) VALUES(@contenido,@titulo,@tipoInformacion)
-GO
--------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CREATE PROCEDURE PA_ModificarCoordenadasDestino(@latitudDestino varchar(max),@longitudDestino varchar(max))
 AS SET NOCOUNT ON;
 Update Mapa set latitudDestino=@latitudDestino, longitudDestino=@longitudDestino
@@ -465,25 +392,39 @@ AS SET NOCOUNT ON;
 SELECT dia,desayuno,imagenDesayuno,almuerzo,imagenAlmuerzo,cena,imagenCena FROM Itinerario
 GO
 -------------------------------------------------------------------------------------------------------------------------
-ALTER PROCEDURE PA_SugerenciaReservacion--@fechaLlegada date,@fechaSalida date,@tipoHabitacion int)
+
+CREATE PROCEDURE PA_ListarContenido(@idContenido smallint)
 AS SET NOCOUNT ON;
-SELECT fechaLlegada,fechaSalida FROM Reservacion
---SELECT fechaLlegada, fechaSalida from Reservacion where MONTH(fechaLlegada)=MONTH(@fechaLlegada) and
---MONTH(fechaSalida)=MONTH(@fechaSalida)   and idTipoHabitacion=@tipoHabitacion
+select titulo,contenido from Contenido where idContenido=@idContenido
+GO
+CREATE PROCEDURE PA_ListarImagenes
+AS SET NOCOUNT ON;
+SELECT ruta from Imagen
+GO
+
+-------------------------------------------------------------------------------------------------------------------------
+ALTER PROCEDURE PA_SugerenciaReservacion
+AS SET NOCOUNT ON;
+SELECT fechaLlegada,fechaSalida, idHabitacion FROM Reservacion 
 GO
 
 -------------------------------------------------------------------------------------------------------------------------
 ALTER PROCEDURE PA_VerificarReservacion(@fechaLlegada date,@fechaSalida date, @tipoHabitacion int)
 AS SET NOCOUNT ON;
 SELECT 
-case when count(1) >1 then 1 else 0 end as rangoFechas
-from Reservacion
-where idTipoHabitacion =@tipoHabitacion and
-(select min(fechaLlegada) from Reservacion where idTipoHabitacion =@tipoHabitacion ) < @fechaSalida
- AND (select max(fechaSalida) from Reservacion where idTipoHabitacion =@tipoHabitacion ) > @fechaLlegada
+count(*) as rangoFechas
+--case 
+--when count(1) >1 then 1 else 0 end as rangoFechas
+from Reservacion r  join Habitacion o on r.idHabitacion=o.idHabitacion
+where o.idTipoHabitacion =@tipoHabitacion 
+and
+(select min(r.fechaLlegada) from Reservacion r join Habitacion o on r.idHabitacion=o.idHabitacion where o.idTipoHabitacion =@tipoHabitacion ) < @fechaSalida
+AND (select max(r.fechaSalida) from Reservacion r join Habitacion o on r.idHabitacion=o.idHabitacion  where o.idTipoHabitacion =@tipoHabitacion ) > @fechaLlegada
  GO
 ------------------------------------------------------------------------------------------------------------------------
-exec PA_VerificarReservacion '2020-04-22','2020-04-24',3
-exec PA_SugerenciaReservacion '2020-04-22','2020-04-23',3
+exec PA_VerificarReservacion '2020-05-01','2020-06-15',2
+exec PA_SugerenciaReservacion
 
-select * from Reservacion
+
+
+

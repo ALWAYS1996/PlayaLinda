@@ -12,7 +12,7 @@ namespace ENTIDAD
         public string codigoHabitacion { get; set; }
 
         [DisplayFormat(NullDisplayText = "Sin Respuesta")]
-        [Display(Name = "Categoria")]
+        [Display(Name = "tipo Habitacion")]
 
         public string tipoHabitacion { get; set; }
 
