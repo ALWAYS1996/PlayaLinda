@@ -269,8 +269,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BasicController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\ContenidoController.cs" />
     <Compile Include="Controllers\HabitacionesController.cs" />
-    <Compile Include="Controllers\InformacionTextoController.cs" />
+    <Compile Include="Controllers\ImagenController.cs" />
     <Compile Include="Controllers\ItinerarioController.cs" />
     <Compile Include="Controllers\MapaController.cs" />
     <Compile Include="Controllers\ReservaController.cs" />
@@ -331,9 +332,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="packages.config" />
-    <Content Include="Views\InformacionTexto\Nosotros.cshtml" />
+    <Content Include="Views\Contenido\Nosotros.cshtml" />
+    <Content Include="Views\Contenido\Contacto.cshtml" />
+    <Content Include="Views\Contenido\Inicio.cshtml" />
     <Content Include="Views\Basic\Facilidades.cshtml" />
-    <Content Include="Views\InformacionTexto\Contacto.cshtml" />
     <Content Include="Views\Mapa\Llegar.cshtml" />
     <Content Include="Views\Reserva\Reservar.cshtml" />
     <Content Include="Views\Basic\View.cshtml" />
@@ -342,6 +344,7 @@
     <Content Include="Views\Basic\Tarifas.cshtml" />
     <Content Include="Views\Reserva\Estado.cshtml" />
     <Content Include="Views\Reserva\ReservaLinea.cshtml" />
+    <Content Include="Views\Reserva\DatosUsuario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ENTIDAD\ENTIDAD.csproj">

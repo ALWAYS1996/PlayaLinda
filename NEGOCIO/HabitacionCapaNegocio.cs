@@ -10,6 +10,8 @@ namespace NEGOCIO
         DATOS.HabitacionesCapaDatos habitacionCapaDatos = new DATOS.HabitacionesCapaDatos();
 
         public IEnumerable<ENTIDAD.TipoHabitacion> listadoTipoHabitaciones()
-        { return habitacionCapaDatos.listadoTipoHabitaciones(); }
+        {
+            return habitacionCapaDatos.listadoTipoHabitaciones();
         }
+    }
 }
