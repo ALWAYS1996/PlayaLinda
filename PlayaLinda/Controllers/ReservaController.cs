@@ -28,7 +28,7 @@ namespace PlayaLinda.Controllers
 
             if (reservacionCapaNegocios.verificarReservacion(reservacion) > 0)
             {
-                ViewBag.mensaje = "Lo sentimos, el rango de fechas que seleccionaste se encuentran ocupadas. En este calendario podrás ver que fechas se encuentran disponibles:";
+                ViewBag.mensaje = "Lo sentimos, el rango de fechas que seleccionaste se encuentran ocupadas. En este calendario podrás ver que fechas se encuentran disponibles";
                 return View(reservacionCapaNegocios.sugerirReservacion());
             } else {
                 ViewData["idHabitacion"] = reservacion.codigoHabitacion;

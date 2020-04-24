@@ -5,7 +5,7 @@
         <center>
             <div class="col-sm-12">
                 <div class="alert alert-danger">
-                    <strong>Estado:</strong> @ViewBag.mensaje :(
+                    <strong>Estado:</strong> @ViewBag.mensaje
                 </div>
             </div>
 
@@ -48,7 +48,7 @@
                         right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
                     },
 
-                    defaultDate: '2020-03-12',
+                    defaultDate: '2020-04-12',
 
                     navLinks: true, // can click day/week names to navigate views
                     editable: true,
@@ -60,7 +60,7 @@
                     @:{
 
                             @: start:'@Convert.ToDateTime(@item.fechaL).ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffzzz")',
-                            @: end: '@Convert.ToDateTime(@item.fechaS).ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffzzz")',
+                            @: end: '@Convert.ToDateTime(@item.fechaS).ToString("yyyy'-'MM'-'dd'T'13:30:00")',
                             @: description: 'Esta habitacion esta ocupada:',
                             @: title: ('Reservada #Hab: @item.idHabitacionTemp'),
                             @: color: '#7B241C',
@@ -75,7 +75,7 @@
                         @:
                     }
                 }
-
+                      
         ]
 
                 });

@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿
+@{
+    ViewBag.Title = "_LayoutLogin";
+}
+
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -11,57 +16,23 @@
     <link rel="icon" type="image/png" href="~/Content/img/hotel.svg" />
 
 
-    <script src="~/Scripts/JQuery.js"></script>
 
 
 </head>
 
 <body>
     <nav class="navbar navbar-light bg-light">
-
         <a class="navbar-brand" href="#">
             <img src="~/Content/img/hotel.svg" width="30" height="30" class="d-inline-block align-top" alt="">
             Hotel Playa Linda
         </a>
-        <a href="/Empleado/LoginEmpleado/" class="btn btn-light">
-            
-           Login 
-        </a>
     </nav>
 
-    <br>
 
 
-    <div class="wrapper">
-        <nav class="shadow nav navbar-brand" syle=" background:cornflowerblue">
+    @RenderBody()
 
-            <ul class="">
-                <li class="nav-link">
-                    @Html.ActionLink("Inicio", "Inicio", "Contenido")
-                </li>
-                <li class="nav-link">
-                    @Html.ActionLink("Sobre Nosotros", "Nosotros", "Contenido")
-                </li>
-                <li class="nav-link">
-                    @Html.ActionLink("Facilidades", "Facilidades", "Basic")
-                </li>
-                <li class="nav-link">
-                    @Html.ActionLink("Cómo llegar", "Llegar", "Mapa")
-                </li>
-                <li class="nav-link">
-                    @Html.ActionLink("Tarifas", "Tarifas", "Basic")
-                </li>
-                <li class="nav-link">
-                    @Html.ActionLink("Hace reservación", "Reservar", "Reserva")
-                </li>
-                <li class="nav-link">
-                    @Html.ActionLink("Contáctenos", "Contacto", "Contenido")
-                </li>
-            </ul>
-        </nav>
-        @RenderBody()
-    </div>
-    <br>
+
 
     <footer class="page-footer" id="foote" name="foote">
         <div class="container">
@@ -112,8 +83,13 @@
     </footer>
 
 
+    <script src="~/Scripts/JQuery.js"></script>
     <script src="~/Scripts/Popper.js"></script>
     <script src="~/Scripts/Bootstrap.js"></script>
 
 </body>
 </html>
+
+
+
+

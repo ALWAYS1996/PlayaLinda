@@ -7,7 +7,7 @@ GO
 -- Definicion de tablas --
 --------------------------
 
-select * from Reservacion
+select * from Empleado
 
 DROP TABLE IF EXISTS Mapa;
 CREATE TABLE Mapa(dummy int);
@@ -422,9 +422,27 @@ and
 AND (select max(r.fechaSalida) from Reservacion r join Habitacion o on r.idHabitacion=o.idHabitacion  where o.idTipoHabitacion =@tipoHabitacion ) > @fechaLlegada
  GO
 ------------------------------------------------------------------------------------------------------------------------
-exec PA_VerificarReservacion '2020-05-01','2020-06-15',2
+alter procedure PA_Login( @Usuario varchar(30),  @Contra  varchar(30), @TipoUsuario int)
+as	SET NOCOUNT ON;
+  select count(*) as cantidad from Empleado e where e.TipoEmpleado=@TipoUsuario and e.IdUsuario= @Usuario and  e.Contrasenna= @contra; 
+ GO
+ ------------------------------------------------------------------------------------------------------------------------
+ alter procedure PA_Login(@Usuario varchar(30), @Contra  varchar(30), @TipoUsuario int)
+ as	SET NOCOUNT ON;
+  select count(*) as cantidad from Empleado e where e.tipoEmpleado=@TipoUsuario and e.idUsuario= @Usuario and  Cast(DecryptByPassPhrase('password', contrasenna) As varchar(max))= @contra; 
+ GO
+ ------------------------------------------------------------------------------------------------------------------------
+ create procedure PA_InsertarEmpleado(@Usuario varchar(30),@Contra  varchar(30), @TipoUsuario int)
+ as set nocount on;
+INSERT INTO [dbo].[Empleado] ([tipoEmpleado],[idUsuario],[contrasenna]) VALUES (1,  'admin' , ENCRYPTBYPASSPHRASE('password','admin' ))
+GO
+------------------------------------------------------------------------------------------------------------------------
+exec PA_VerificarReservacion '2020-05-01','2020-05-7',2
 exec PA_SugerenciaReservacion
 
+exec PA_Login 'admin','admin',1
+
+select * from Reservacion
 
 
 

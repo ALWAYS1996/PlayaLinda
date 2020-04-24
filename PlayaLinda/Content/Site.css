@@ -10,17 +10,15 @@ a {
 
 
     a:visited {
-        color: #6d7fcc;
-        background-color: #6d7fcc;
+        color: #000000;
     }
 
     a:hover {
-        color: #6d7fcc;
-        background-color: #6d7fcc;
+        color: #fafafa;
     }
 
     a:active {
-        color: #6d7fcc;
+        color: #fafafa;
     }
 
 
