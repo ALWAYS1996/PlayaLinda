@@ -20,10 +20,10 @@ namespace NEGOCIO
 
         public IEnumerable<ENTIDAD.Reservacion> listarReservaciones()
         { return reservacionCapaDatos.listarReservaciones(); }
+        public IEnumerable<ENTIDAD.Reservacion> consultarReservaciones(ENTIDAD.Reservacion reserva)
+        { return reservacionCapaDatos.consultarReservaciones(reserva); }
+
 
     }
-
-    
-
 }
 

@@ -116,8 +116,6 @@ namespace DATOS
             finally { conexion.Close(); }
             return sugerenciaReservacion;
         }//Fin
-
-
         private List<ENTIDAD.Reservacion> listaReservacions = new List<ENTIDAD.Reservacion>();
         public IEnumerable<ENTIDAD.Reservacion> listarReservaciones()
         {
@@ -157,6 +155,49 @@ namespace DATOS
             catch (Exception) { }
             finally { conexion.Close(); }
             return listaReservacions;
+        }//Fin
+    
+
+
+private List<ENTIDAD.Reservacion> consultaReservaciones = new List<ENTIDAD.Reservacion>();
+        public IEnumerable<ENTIDAD.Reservacion> consultarReservaciones(ENTIDAD.Reservacion reserva)
+        {
+            SqlCommand comando = new SqlCommand();
+            try
+            {
+                comando.Connection = conexion;
+                conexion.Open();
+                comando.CommandText = "exec PA_FiltrarReservacionById @idReservacion";
+                comando.Parameters.AddWithValue("@idReservacion", reserva.codigoReservacion);
+                SqlDataAdapter da = new SqlDataAdapter(comando);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+
+                ENTIDAD.Reservacion reservacion = null;
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    for (int i = 0; i <= ds.Tables[0].Rows.Count - 1; i++)
+                    {
+                        reservacion = new ENTIDAD.Reservacion();
+                        //   reservacion.idHabitacionTemp = (ds.Tables[0].Rows[i][0].ToString());
+
+                        reservacion.codigoReservacion = int.Parse(ds.Tables[0].Rows[i][0].ToString());
+                        reservacion.codigoHabitacion = int.Parse(ds.Tables[0].Rows[i][1].ToString());
+                        reservacion.codigoCliente = (ds.Tables[0].Rows[i][2].ToString());
+                        reservacion.fechaL =         (ds.Tables[0].Rows[i][3].ToString());
+                        reservacion.fechaS =        (ds.Tables[0].Rows[i][4].ToString());
+
+                        consultaReservaciones.Add(reservacion);
+                    }
+                }
+                int result = comando.ExecuteNonQuery();
+
+                return consultaReservaciones;
+            }
+            catch (Exception) { }
+            finally { conexion.Close(); }
+            return consultaReservaciones;
         }//Fin
     }
 }

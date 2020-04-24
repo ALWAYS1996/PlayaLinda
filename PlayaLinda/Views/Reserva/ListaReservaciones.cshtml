@@ -1,4 +1,7 @@
-﻿@model IEnumerable<ENTIDAD.Reservacion>
+﻿@*@{
+    Layout = "~/Views/Shared/Layout_Adm.cshtml";
+}*@
+@model IEnumerable<ENTIDAD.Reservacion>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
 
 <table id="table" class="table">
@@ -10,6 +13,7 @@
             <th>Fecha llegada</th>
             <th>Fecha salida</th>
             <th>Opciones</th>
+            <th>Detalle</th>
         </tr>
     </thead>
     <tbody>
@@ -22,7 +26,10 @@
                 <td>@dato.codigoCliente</td>
                 <td>@dato.fechaL</td>
                 <td>@dato.fechaS</td>
-                <td><a href="">Ver detalles</a>/<a href="">Eliminar</a></td>
+                <td><a href="">Ver detalles</a> <a href="">Eliminar</a></td>
+                <td>
+                    @Html.ActionLink("Detalles", "ConsultarReservacion", new { codigoReservacion = dato.codigoReservacion })
+                </td>
             </tr>
 
         }

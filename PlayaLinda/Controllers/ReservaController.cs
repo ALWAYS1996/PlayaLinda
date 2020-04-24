@@ -39,8 +39,19 @@ namespace PlayaLinda.Controllers
 
 
             }
-      
             
+
+
+
+        }
+        public ActionResult ListaReservaciones()
+        {
+            return View(reservacionCapaNegocios.listarReservaciones());
+        }
+
+        public ActionResult ConsultarReservacion(int codigoReservacion) {
+
+            return View(reservacionCapaNegocios.consultarReservaciones(new Reservacion(codigoReservacion)));
         }
         public ActionResult CrearReservacion(Reservacion reservacion)  {
             string mensaje;

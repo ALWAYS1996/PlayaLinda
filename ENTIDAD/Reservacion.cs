@@ -60,5 +60,10 @@ namespace ENTIDAD
             this.fechaL = fechaLlegada;
             this.fechaS = fechaSalida;
         }
+        public Reservacion(int idReserva)
+        {
+            this.codigoReservacion = idReserva;
+
+        }
     }
 }
