@@ -15,8 +15,15 @@ namespace NEGOCIO
         { return reservacionCapaDatos.verificarReservacion(reservacion); }
 
  
-   public IEnumerable<ENTIDAD.Reservacion> sugerirReservacion()
+        public IEnumerable<ENTIDAD.Reservacion> sugerirReservacion()
         { return reservacionCapaDatos.sugerirReservacion(); }
 
+        public IEnumerable<ENTIDAD.Reservacion> listarReservaciones()
+        { return reservacionCapaDatos.listarReservaciones(); }
+
     }
+
+    
+
 }
+
